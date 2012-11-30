@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+    id: 1
+    title: iMovie Greenscreen
+    date: 2012-11-28
+    patron_request: I need help putting different footage together in iMovie. Some of that footage was shot with a green screen and I need to change the background.
+    consultation_summary: I showed the patron how to important video and create transitions with iMovie.  I also showed her how to use the greenscreen advanced function.
+    resources_used: http://www.youtube.com/watch?v=Q64NAQsoUZg
+    status: closed
+    created_at: <%= 2.days.ago.to_s :db %>
+    updated_at: <%= 2.days.ago.to_s :db %>
+     
+#
+two: 
+    id: 2
+    title: iMovie VHS Transfer
+    date: 2012-11-24
+    patron_request: I need help transferring video from VHS to digital.
+    consultation_summary: I showed the patron how to connect the VCR and DVR to the computer and use iMovie to import.
+    resources_used: https://tutorials.ischool.utexas.edu/index.php?title=Digitizing_VHS_video_tape_with_Apple_iMovie_8.05
+    status: closed
+    created_at: <%= 6.days.ago.to_s :db %>
+    updated_at: <%= 6.days.ago.to_s :db %>
+
+three:
+    id: 3
+    title: iMovie Audio Enhancement
+    date: 2012-11-20
+    patron_request: I need help correcting the sound on my video.  There is a lot of background noise that makes speaker hard to hear.
+    consultation_summary: I used iMovie inspector to change the audio volumne and equalization.  Still the sound was not good enough.
+    resources_used: http://www.apple.com/ilife/video-showcase/
+    status: open
+    created_at: <%= 10.days.ago.to_s :db %>
+    updated_at: <%= 10.days.ago.to_s :db %>
