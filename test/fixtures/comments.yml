@@ -1,0 +1,91 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  post_id: 1
+  title: iMovie Greenscreen
+  date: 2012-12-02
+  patron_request: I have some images that I want to make the background of some video that I shot.
+  consultation_summary: The patron already had greenscreen footage.  I just showed her how to change the background by adding images.
+  resources_used: http://www.slideshare.net/jcorippo/imovie-9-or-11-green-screen http://mediacommons.psu.edu/instruction/tutorials/using-green-screen-video-imovie-11
+  status: closed
+
+two:
+  post_id: 1
+  title: iMovie Greenscreen
+  date: 2012-12-04
+  patron_request: I need to know how to use iMovie to do an interview with a student.  I want to make it look like we are on Oprah.
+  consultation_summary: I took the patron into the audiolab and showed him how to shoot green screen footage and change the background.
+  resources_used: http://www.wondershare.com/imovie/imovie-green-screen-effect.html http://www.youtube.com/watch?v=6ZhbJCEMiJM
+  status: closed
+
+three:
+    post_id: 1
+    title: iMovie Greenscreen
+    date: 2012-12-03
+    patron_request: I have greenscreen shots that I need to change the background of.
+    consultation_summary: I showed the patron how to utilize the green screen function in iMovie.
+    resources_used: http://apple-imovie.wonderhowto.com/how-to/use-green-screen-imovie-334460/
+    status: closed
+    
+four:    
+    post_id: 2
+    title: iMovie VHS Transfer
+    date: 2012-12-06
+    patron_request: I have old family footage that I want to get off VHS tapes.
+    consultation_summary: I helped the patron set up video station B and showed her how to use iMovie to import the video.
+    resources_used: http://blip.tv/digitalgoulash/vhs-to-dvd-basics-using-imovie-3912515
+    status: closed
+    
+five:
+    post_id: 10
+    title: Wordpress Create Website
+    date: 2012-12-06
+    patron_request: I have to create a web site for a class assignment in my English class.
+    consultation_summary: The patron needed to create a website that allowed users to visualize certain passages from an authors work.  I couldn't find any visualize tools that would work.
+    resources_used: http://en.support.wordpress.com/using-wordpress-to-create-a-website/ http://richardmuscat.wordpress.com/2009/03/25/using-wordpress-as-a-cms-step-by-step-tutorial/ http://wordpress.lexty.com/
+    status: open    
+    
+six:
+    post_id: 10
+    title: Wordpress Create Website
+    date: 2012-12-01
+    patron_request: I need to create a web site for my fraternity.
+    consultation_summary: The patron brought in images and text he wanted included in the site. I helped showed him how to pick a Wordpress theme and how to incorporate his materials into pages.
+    resources_used: http://www.youtube.com/watch?v=8Jv47_VIBOQ
+    status: closed
+    
+seven:
+    post_id: 5
+    title: iMovie Import/Export
+    date: 2012-12-01
+    patron_request: I need to make changes to a video I downloaded from YouTube.
+    consultation_summary: I showed the patron how to download videos from YouTube and how to import it back into iMovie.  I also explained how to export when he was finished editing.
+    resources_used: http://www.videojug.com/film/how-to-import-video-in-imovie http://download.cnet.com/Free-YouTube-Downloader/3000-2071_4-75219434.html
+    status: closed
+    
+eight:
+    post_id: 6
+    title: iMovie Create
+    date: 2012-12-06
+    patron_request: I need to take some images from my summer job and make it into a five minute video about what my internship was like.
+    consultation_summary: I showed the patron how to create a new project and import his images from iPhoto.  I also demonstated how to do voice over and transition between images.
+    resources_used: http://support.apple.com/kb/PH2254 http://www.dummies.com/how-to/content/how-to-add-photos-to-your-movies-in-imovie.html
+    status: closed
+    
+nine:
+    post_id: 8
+    title: Google Map Maker Edit Maps and Export
+    date: 2012-12-05
+    patron_request: I have a presentation on the Civil War battles. I have to create a map that locates these sites and add them to a Powerpoint.
+    consultation_summary: I showed the patron how to use Google Map Maker to construct a few maps.  He asked a questions about a plugin to bring in different maps.  I could not find any information on such a plugin.
+    resources_used: http://support.google.com/mapmaker/
+    status: open
+    
+ten:
+    post_id: 9
+    title: Photoshop Remove Background
+    date: 2012-12-05
+    patron_request: I need to change the background of a few images that I am going to put in a presentation about Abe Lincoln.
+    consultation_summary: I helped the patron change the background of her images using the background eraser.
+    resources_used: http://www.sitepoint.com/how-to-quickly-easily-remove-a-background-in-photoshop/
+    status: closed                

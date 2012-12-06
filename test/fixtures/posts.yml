@@ -15,7 +15,6 @@ one:
     created_at: <%= 2.days.ago.to_s :db %>
     updated_at: <%= 2.days.ago.to_s :db %>
      
-#
 two: 
     id: 2
     title: iMovie VHS Transfer
@@ -37,3 +36,85 @@ three:
     status: open
     created_at: <%= 10.days.ago.to_s :db %>
     updated_at: <%= 10.days.ago.to_s :db %>
+
+four: 
+    id: 4
+    title: Audio Lab Midi DJing
+    date: 2012-11-26
+    patron_request: I need a lesson on how to use a midi board to dj.
+    consultation_summary: Show patron the different functions of the MIDI board in the audio studio.  I did not know if the MIDI board could be used for djing or if we had other software for djing.
+    resources_used: http://www.youtube.com/watch?v=DH0hVuhZ-5I
+    status: open
+    created_at: <%= 8.days.ago.to_s :db %>
+    updated_at: <%= 8.days.ago.to_s :db %>
+    
+five:
+    id: 5
+    title: iMovie Import/Export
+    date: 2012-11-27
+    patron_request: We need to convert a powerpoint presentation that has embedded animations soundrecordings and video clips to a "movie" that can be uploaded to youtube.
+    consultation_summary: I used iMovie to show patron how to import animations sound recordings and video clips.
+    resources_used: http://www.apple.com/ilife/video-showcase/
+    status: closed
+    created_at: <%= 7.days.ago.to_s :db %>
+    updated_at: <%= 7.days.ago.to_s :db %>
+    
+six:
+    id: 6
+    title: iMovie Create
+    date: 2012-11-20
+    patron_request: I have a video project due Tuesday during class at 11:45. I will need to compile/edit together a short video presentation that will end up being 3-5 minutes.
+    consultation_summary: I showed patron how to get started creating a video in iMovie.
+    resources_used: http://www.apple.com/ilife/video-showcase/ http://support.apple.com/kb/PH2115
+    status: closed
+    created_at: <%= 10.days.ago.to_s :db %>
+    updated_at: <%= 10.days.ago.to_s :db %>    
+    
+seven:
+    id: 7
+    title: iMovie Add Interview
+    date: 2012-12-03
+    patron_request: We have some videos taken from an interview we conducted. We want to edit this videos and put them in a PowerPoint presentation for our group project presentation.
+    consultation_summary: I used iMovie to important and intergrate the patron's interview into other video footage.
+    resources_used: http://www.apple.com/ilife/video-showcase/ http://desktopvideo.about.com/od/homevideoprojects/ht/imoviememoir.htm
+    status: closed
+    created_at: <%= 1.days.ago.to_s :db %>
+    updated_at: <%= 1.days.ago.to_s :db %>
+    
+eight:
+    id: 8
+    title: Google Map Maker Edit Maps and Export
+    date: 2012-12-01
+    patron_request: I am looking to create a few maps modifying some found on Google. I need one map of NC that has county outlines that I can highlight particular counties on and then I need smaller maps of the individual counties. The result is going to be in a power point.
+    consultation_summary: I used Google Map Maker to create boundries of the counties in NC.  Then showed patron how to export map.
+    resources_used: http://www.youtube.com/user/GoogleMapMaker
+    status: closed
+    created_at: <%= 2.days.ago.to_s :db %>
+    updated_at: <%= 2.days.ago.to_s :db %>
+    
+nine:
+    id: 9
+    title: Photoshop Remove Background
+    date: 2012-11-23
+    patron_request: I have to create a poster for a class assignment and need help removing a background from an image I want to include in the poster. 
+    consultation_summary: I showed the patron how to use the magic wand feature in Photoshop to make the background translucent.
+    resources_used: http://www.addictivetips.com/windows-tips/how-to-remove-image-background-in-photoshop-tutorial/ http://www.youtube.com/watch?v=UWv2zxFePlI
+    status: closed
+    created_at: <%= 9.days.ago.to_s :db %>
+    updated_at: <%= 9.days.ago.to_s :db %>
+    
+ten:
+    id: 10
+    title: Wordpress Create Website
+    date: 2012-11-24
+    patron_request: I need to create a Wordpress site for a group assignment in my class. 
+    consultation_summary: I showed the patron the option to use ncsu servers or wordpress servers to use the site.  The patron chose to use the wordpress site to create her website.  I showed her how to create site choose theme manage permissions and create and edit pages.
+    resources_used: http://codex.wordpress.org/WordPress_Lessons http://wordpress.ncsu.edu/
+    status: closed
+    created_at: <%= 10.days.ago.to_s :db %>
+    updated_at: <%= 10.days.ago.to_s :db %>                
+    
+    
+    
+    
+    
