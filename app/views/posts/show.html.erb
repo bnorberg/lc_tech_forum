@@ -1,35 +1,47 @@
 <p id="notice"><%= notice %></p>
+<h3><%= @post.title %></h3>
+<div class="posts">
+	<p>
+	  <b>Title:</b>
+	  <%= @post.title %>
+	</p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+	<p>
+	  <b>Date:</b>
+	  <%= @post.date %>
+	</p>
 
-<p>
-  <b>Date:</b>
-  <%= @post.date %>
-</p>
+	<p>
+	  <b>Patron request:</b>
+	  <%= @post.patron_request %>
+	</p>
 
-<p>
-  <b>Patron request:</b>
-  <%= @post.patron_request %>
-</p>
+	<p>
+	  <b>Consultation summary:</b>
+	  <%= @post.consultation_summary %>
+	</p>
 
-<p>
-  <b>Consultation summary:</b>
-  <%= @post.consultation_summary %>
-</p>
+	<p>
+	  <b>Resources used:</b>
+	  <%= get_links(@post.resources_used) %>
+	</p>
 
-<p>
-  <b>Resources used:</b>
-  <%= get_links(@post.resources_used) %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @post.status %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
+	<p>
+	  <b>Status:</b>
+	  <%= @post.status %>
+	</p>
+	<br />
+	<% if @post.comments.count > 0 %>
+	<hr />
+	<p><%= link_to_function "Show/Hide Thread", "$('#comments_thread').toggle()" %></p>
+<% end %>	
+</div>
+<div id="comments_thread" style="display:none">
+<%= render partial: 'comment', collection: @post.comments %>
+</div>
+<br />
+<h3><%= link_to_function "Post a New Comment", "$('#post_comment').toggle()" %></h3>
+<div id="post_comment" style="display:none">
+	<%= render partial: 'comments/form' %>
+</div>
 <%= link_to 'Back', posts_path %>

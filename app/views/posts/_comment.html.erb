@@ -1,0 +1,31 @@
+<div class="comments">
+	<p>
+	  <b>Title:</b>
+	  <%= comment.title %>
+	</p>
+
+	<p>
+	  <b>Date:</b>
+	  <%= comment.date %>
+	</p>
+
+	<p>
+	  <b>Patron request:</b>
+	  <%= comment.patron_request %>
+	</p>
+
+	<p>
+	  <b>Consultation summary:</b>
+	  <%= comment.consultation_summary %>
+	</p>
+
+	<p>
+	  <b>Resources used:</b>
+	  <%= get_links(comment.resources_used) %>
+	</p>
+
+	<p>
+	  <b>Status:</b>
+	  <%= comment.status %>
+	</p>
+</div>
