@@ -529,7 +529,7 @@ border-color: #81b1df;
 background-color: #fff
 }
 form input[type=text], form input[type=password] {
-margin: 0
+margin: 0;
 }
 form p {
 padding: 0;
@@ -548,6 +548,80 @@ form textarea {
 height: 12em;
 font-size: 1.1em
 }
+
+div.home_nav {
+	float:right;
+	margin-left:100px;
+}
+
+div.cancel {
+	float:left;
+	margin-left:5px;
+}
+
+.test a {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-o-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	border-radius: 6px;
+	font-size: 18px;
+	line-height: 1.2em;
+	font-weight:bold;
+	padding: 0.3em 1em;
+	background-color: #134e89;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #81a2c3), color-stop(10%, #4b749e), color-stop(50%, #2d4660), color-stop(50%, #283f55), color-stop(100%, #395878));
+	background-image: -moz-linear-gradient(#81a2c3,#4b749e 10%,#2d4660 50%,#283f55 50%,#395878);
+	background-image: linear-gradient(#81a2c3,#4b749e 10%,#2d4660 50%,#283f55 50%,#395878);
+	border:solid 1px #192836;
+	text-shadow: #030e19 0px 1px 1px;
+	-moz-box-shadow: rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
+	-o-box-shadow: rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
+	box-shadow: rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding;
+	-o-background-clip: padding-box;
+	-ms-background-clip: padding-box;
+	-khtml-background-clip: padding-box;
+	background-clip: padding-box;
+	font-size: 1.2em;
+	color:white;
+	text-decoration:none;
+	float:left;
+	margin-left: 10px;
+	display:inline;
+}
+.test a,div.test a:visited {
+color: #fff
+}
+.test a:hover,div.test a:focus {
+background-color: #11467c;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #769bbf), color-stop(10%, #466d94), color-stop(50%, #283f55), color-stop(50%, #23374b), color-stop(100%, #34516d));
+background-image: -moz-linear-gradient(#769bbf,#466d94 10%,#283f55 50%,#23374b 50%,#34516d);
+background-image: linear-gradient(#769bbf,#466d94 10%,#283f55 50%,#23374b 50%,#34516d);
+border:solid 1px #15202c;
+text-shadow: #02070c 0px 1px 1px
+}
+div.test a:hover,div.test a:hover:visited,div.test a:focus,div.test a:focus:visited {
+color: #fff
+}
+.test a:active {
+background-color: #0f3f6e;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #283f55), color-stop(30%, #2b445c), color-stop(50%, #253a4e), color-stop(50%, #203244), color-stop(100%, #355371));
+background-image: -moz-linear-gradient(#283f55,#2b445c 30%,#253a4e 50%,#203244 50%,#355371);
+background-image: linear-gradient(#283f55,#2b445c 30%,#253a4e 50%,#203244 50%,#355371);
+border:solid 1px #101821;
+text-shadow: #000 0px -1px -1px;
+-moz-box-shadow: #192836 0 0.08em 0.2em 1px inset;
+-webkit-box-shadow: #192836 0 0.08em 0.2em 1px inset;
+-o-box-shadow: #192836 0 0.08em 0.2em 1px inset;
+box-shadow: #192836 0 0.08em 0.2em 1px inset
+}
+.test a:active,input[type=submit]:active:visited {
+color: #fff
+}	
 input[type=submit] {
 -moz-border-radius: 6px;
 -webkit-border-radius: 6px;
@@ -559,11 +633,11 @@ font-size: 18px;
 line-height: 1.2em;
 padding: 0.3em 1em;
 border-width: 1px;
+border-color: #101821;
 background-color: #134e89;
 background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #81a2c3), color-stop(10%, #4b749e), color-stop(50%, #2d4660), color-stop(50%, #283f55), color-stop(100%, #395878));
 background-image: -moz-linear-gradient(#81a2c3,#4b749e 10%,#2d4660 50%,#283f55 50%,#395878);
 background-image: linear-gradient(#81a2c3,#4b749e 10%,#2d4660 50%,#283f55 50%,#395878);
-border-color: #192836;
 text-shadow: #030e19 0px 1px 1px;
 -moz-box-shadow: rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
 -webkit-box-shadow: rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
@@ -575,7 +649,8 @@ box-shadow: rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
 -ms-background-clip: padding-box;
 -khtml-background-clip: padding-box;
 background-clip: padding-box;
-font-size: 1.2em
+font-size: 1.2em;
+diplay:block;
 }
 input[type=submit],input[type=submit]:visited {
 color: #fff

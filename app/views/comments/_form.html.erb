@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+<br /><br />
 
   <div class="field">
     <%= f.hidden_field :post_id %>
@@ -38,7 +39,10 @@
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+<br />
+  <div class="actions" style="float:left">
+    <%= f.submit %></span>
   </div>
 <% end %>
+<div class="cancel"><span class="test"><%= link_to 'Cancel', @post %></span></div>
+<br /><br />
