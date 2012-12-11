@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
+  
+   before_filter :require_login, :only => [:new, :destroy, :create, :edit, :update]
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @q = Post.includes(:comments).search(params[:q])
+    @posts = @q.result(:distinct => true)
 
     respond_to do |format|
       format.html # index.html.erb

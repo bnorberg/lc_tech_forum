@@ -6,9 +6,8 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body>	
+	<%= yield %>
+	<p class="flash"><%= flash.notice %></p>
 </body>
 </html>

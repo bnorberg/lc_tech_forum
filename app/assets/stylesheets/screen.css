@@ -71,6 +71,7 @@ background: #d3dd8a;
 -webkit-background-size: 80px 80px;
 -o-background-size: 80px 80px;
 background-size: 80px 80px;
+/*grading effect*/
 background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(25%, rgba(255,255,255,0.1)), color-stop(25%, rgba(255,255,255,0)), color-stop(50%, rgba(255,255,255,0)), color-stop(50%, rgba(255,255,255,0.1)), color-stop(75%, rgba(255,255,255,0.1)), color-stop(75%, rgba(255,255,255,0)), color-stop(100%, rgba(255,255,255,0)));
 background-image: -moz-linear-gradient(left top, rgba(255,255,255,0.1) 25%,rgba(255,255,255,0) 25%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.1) 75%,rgba(255,255,255,0) 75%,rgba(255,255,255,0));
 background-image: linear-gradient(left top, rgba(255,255,255,0.1) 25%,rgba(255,255,255,0) 25%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.1) 75%,rgba(255,255,255,0) 75%,rgba(255,255,255,0))
@@ -104,6 +105,7 @@ border-radius: 6px;
 -khtml-background-clip: padding-box;
 background-clip: padding-box
 }
+/*shadow effect*/
 body:before {
 content: " ";
 z-index: -2;
@@ -135,41 +137,6 @@ background-clip: padding-box;
 -ms-transform: rotate(-2deg);
 transform: rotate(-2deg)
 }
-a.new_post {
-	text-decoration:none;
-	color:white;
-}
-table.home {
-width:100%;
-border-top:1px solid;
-border-right:1px solid;
-border-left:1px solid;
-border-collapse:collapse;
-padding:5px;
-}
-table.home td {
-	padding:10px;
-	border:1px solid;
-}
-table.home th {
-	padding:5px;
-}
-div.posts{
-	border: solid;
-	padding: 5px;
-}
-div.comments{
-	border: solid;
-	padding: 5px;
-	margin-top:1px;
-	margin-left: 30px;
-}
-.resource_links {
-	display:block;
-	margin-top:-30px;
-	margin-left:40px;
-	margin-bottom:10px;
-}
 body:after {
 content: " ";
 position: absolute;
@@ -191,10 +158,63 @@ z-index: -1;
 -o-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px 1px;
 box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px 1px
 }
-a {
-color: #2d4159
+div#title_cont {
+	font-size:14px;
 }
-
+input#q_title_cont {
+	width:75%;
+	font-size:14px;
+}
+input#q_title_cont, input {
+	display:inline;
+	float:left;
+}
+a.new_post {
+	display:block;
+	float:left;
+	text-decoration:none;
+	color:white;
+	font-size:24pt;
+}
+table.home {
+width:100%;
+border-top:1px solid;
+border-right:1px solid;
+border-left:1px solid;
+border-collapse:collapse;
+padding:5px;
+}
+table.home td {
+	padding:10px;
+	border:1px solid;
+}
+table.home th {
+	padding:5px;
+	font-weight:bold;
+}
+div.posts{
+	border: solid;
+	padding: 5px;
+}
+div.comments{
+	border: solid;
+	padding: 5px;
+	margin-top:1px;
+	margin-left: 30px;
+}
+.resource_links {
+	display:block;
+	margin-top:-30px;
+	margin-left:40px;
+	margin-bottom:10px;
+}
+a.post_title, .resource_links a, a.logout, .show_hide a {
+	color:black;
+}	
+a.post_title:hover, .resource_links a:hover, a.logout:hover, .show_hide a:hover {
+	    color: #fff;
+	    background-color: #000;
+}
 p.flash {
 -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 3px;
 -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 3px;
@@ -248,7 +268,7 @@ border-width: 0;
 box-shadow: none;
 background: none
 }
-h1 {
+div.new_home {
 -moz-border-radius-topleft: 6px;
 -webkit-border-top-left-radius: 6px;
 -o-border-top-left-radius: 6px;
@@ -270,7 +290,7 @@ background-image: linear-gradient(#42678d,#223447);
 box-shadow: rgba(255, 255, 255, 0.15) 0 1px inset, white 0 1px;
 margin: -20px -20px 15px;
 padding: 20px;
-padding-right: 180px;
+padding-right: 50px;
 line-height: 1em;
 font-weight: normal;
 color: #fff;
@@ -278,7 +298,7 @@ position: relative;
 text-shadow: #192836 0 -2px;
 font-size: 2.5em
 }
-h1:after {
+div.new_home:after {
 content: " ";
 position: absolute;
 left: 0;
@@ -290,6 +310,20 @@ background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba
 background-image: -moz-linear-gradient(rgba(170,170,170,0.5),rgba(255,255,255,0));
 background-image: linear-gradient(rgba(170,170,170,0.5),rgba(255,255,255,0));
 z-index: 1
+}
+div.auth{
+	font-size:.5em;
+	float:right;
+}
+div.auth a {
+	font-size:1em;
+	color:white;
+	float:right;
+	text-decoration: none;
+	diplay:inline;
+}
+div.auth a:hover {
+color: #d3dd8a;
 }
 h2,h3,h4 {
 color: #2d4159;
@@ -307,60 +341,25 @@ color: #6c7c9a
 }
 .comment p {
 padding-left: 12px;
+padding-top:5px;
 border-left: 5px solid rgba(45, 65, 89, 0.5)
 }
-.comment p:first-child {
-font-weight: bold;
-color: #2d4159;
-padding-left: 0;
-border: 0;
-padding-bottom: 1em
+
+.user_nav {
+	display:inline;
+	float:right;
 }
-.comment + .comment {
-border-top: none
+.field label{
+	padding-top:10px;
 }
-.comment + h3,.comment + h4 {
-margin: 0 0 .5em
-}
-.comment:nth-last-of-type(1) {
-border-bottom: 1px solid #ddd;
-margin-bottom: 2em
-}
+
 h1,h2,h3,h4,h5,h6 {
 font-weight: bold
 }
-.top-button,a.new_article,.article_actions a[href$='edit'],.article_actions a[data-method='delete'] {
-position: absolute;
-top: 26px;
-right: 20px;
-display: inline-block;
-padding: 4px 11px;
-font-size: .9em;
--moz-box-shadow: rgba(255, 255, 255, 0.4) 0 -1px inset;
--webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 -1px inset;
--o-box-shadow: rgba(255, 255, 255, 0.4) 0 -1px inset;
-box-shadow: rgba(255, 255, 255, 0.4) 0 -1px inset;
--moz-border-radius: 1.2em;
--webkit-border-radius: 1.2em;
--o-border-radius: 1.2em;
--ms-border-radius: 1.2em;
--khtml-border-radius: 1.2em;
-border-radius: 1.2em;
-background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cccccc));
-background-image: -moz-linear-gradient(#ffffff,#cccccc);
-background-image: linear-gradient(#ffffff,#cccccc);
-text-shadow: #fff 0 1px;
-color: #999999;
-text-decoration: none
-}
 .top-button:hover,a.new_post:hover,.article_actions a[href$='edit']:hover,.post_actions a[data-method='delete']:hover {
-color: #555
+color: #d3dd8a;
 }
-.top-button:active,a.new_post:active,.post_actions a[href$='edit']:active,.post_actions a[data-method='delete']:active {
-background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d9d9d9), color-stop(100%, #f5f5f5));
-background-image: -moz-linear-gradient(#d9d9d9,#f5f5f5);
-background-image: linear-gradient(#d9d9d9,#f5f5f5)
-}
+
 #sidebar + ul {
 padding-right: 180px
 }
@@ -567,7 +566,7 @@ div.cancel {
 	-khtml-border-radius: 6px;
 	border-radius: 6px;
 	font-size: 18px;
-	line-height: 1.2em;
+	line-height: 1.1em;
 	font-weight:bold;
 	padding: 0.3em 1em;
 	background-color: #134e89;
@@ -649,8 +648,9 @@ box-shadow: rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
 -ms-background-clip: padding-box;
 -khtml-background-clip: padding-box;
 background-clip: padding-box;
-font-size: 1.2em;
-diplay:block;
+font-size: 1.1em;
+diplay:inline;
+margin-left: 5px;
 }
 input[type=submit],input[type=submit]:visited {
 color: #fff

@@ -21,6 +21,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'sorcery'
+gem 'ransack'
+gem 'will_paginate', '~> 3.0.0'
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
