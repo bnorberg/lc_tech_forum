@@ -158,6 +158,9 @@ z-index: -1;
 -o-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px 1px;
 box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px 1px
 }
+p.paginate {
+	padding:3px;
+}
 div#title_cont {
 	font-size:14px;
 }

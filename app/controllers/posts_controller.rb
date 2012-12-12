@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @q = Post.includes(:comments).search(params[:q])
-    @posts = @q.result(:distinct => true)
+    @posts = @q.result(:distinct => true).paginate(:page =>params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb
