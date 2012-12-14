@@ -684,6 +684,13 @@ box-shadow: #192836 0 0.08em 0.2em 1px inset
 input[type=submit]:active,input[type=submit]:active:visited {
 color: #fff
 }
+
+input[type=checkbox] { 
+	height: 30px; 
+	line-height: 30px;
+	font-size: 1.1em;
+	
+}​
 div.field_with_errors label {
 color: red;
 font-weight: bold
