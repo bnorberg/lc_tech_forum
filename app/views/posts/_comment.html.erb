@@ -3,10 +3,15 @@
 	  <b>Title:</b>
 	  <%= comment.title %>
 	</p>
+	
+	<p>
+	  <b>Author:</b>
+	  <%= comment.author %>
+	</p>
 
 	<p>
 	  <b>Date:</b>
-	  <%= comment.date %>
+	  <%= comment.updated_at.localtime.to_s.sub('-0500', '') %>
 	</p>
 
 	<p>

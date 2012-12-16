@@ -16,6 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :author %><br />
+	<%= f.text_field :author, :value => current_user.username %>
+  </div>
+  <div class="field">
     <%= f.label :date %><br />
     <%= f.date_select :date %>
   </div>

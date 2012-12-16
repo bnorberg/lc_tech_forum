@@ -7,6 +7,7 @@
 one: 
     id: 1
     title: iMovie Greenscreen
+    author: Pete Wilson
     date: 2012-11-28
     patron_request: I need help putting different footage together in iMovie. Some of that footage was shot with a green screen and I need to change the background.
     consultation_summary: I showed the patron how to important video and create transitions with iMovie.  I also showed her how to use the greenscreen advanced function.
@@ -18,6 +19,7 @@ one:
 two: 
     id: 2
     title: iMovie VHS Transfer
+    author: Uma Thurman
     date: 2012-11-24
     patron_request: I need help transferring video from VHS to digital.
     consultation_summary: I showed the patron how to connect the VCR and DVR to the computer and use iMovie to import.
@@ -29,6 +31,7 @@ two:
 three:
     id: 3
     title: iMovie Audio Enhancement
+    author: Kate Winslet
     date: 2012-11-20
     patron_request: I need help correcting the sound on my video.  There is a lot of background noise that makes speaker hard to hear.
     consultation_summary: I used iMovie inspector to change the audio volumne and equalization.  Still the sound was not good enough.
@@ -40,6 +43,7 @@ three:
 four: 
     id: 4
     title: Audio Lab Midi DJing
+    author: George Eliot
     date: 2012-11-26
     patron_request: I need a lesson on how to use a midi board to dj.
     consultation_summary: Show patron the different functions of the MIDI board in the audio studio.  I did not know if the MIDI board could be used for djing or if we had other software for djing.
@@ -51,6 +55,7 @@ four:
 five:
     id: 5
     title: iMovie Import/Export
+    author: Pete Wilson
     date: 2012-11-27
     patron_request: We need to convert a powerpoint presentation that has embedded animations soundrecordings and video clips to a "movie" that can be uploaded to youtube.
     consultation_summary: I used iMovie to show patron how to import animations sound recordings and video clips.
@@ -62,6 +67,7 @@ five:
 six:
     id: 6
     title: iMovie Create
+    author: Tom Cruise
     date: 2012-11-20
     patron_request: I have a video project due Tuesday during class at 11:45. I will need to compile/edit together a short video presentation that will end up being 3-5 minutes.
     consultation_summary: I showed patron how to get started creating a video in iMovie.
@@ -73,6 +79,7 @@ six:
 seven:
     id: 7
     title: iMovie Add Interview
+    author: Noam Chomsky
     date: 2012-12-03
     patron_request: We have some videos taken from an interview we conducted. We want to edit this videos and put them in a PowerPoint presentation for our group project presentation.
     consultation_summary: I used iMovie to important and intergrate the patron's interview into other video footage.
@@ -84,6 +91,7 @@ seven:
 eight:
     id: 8
     title: Google Map Maker Edit Maps and Export
+    author: Pete Townsend
     date: 2012-12-01
     patron_request: I am looking to create a few maps modifying some found on Google. I need one map of NC that has county outlines that I can highlight particular counties on and then I need smaller maps of the individual counties. The result is going to be in a power point.
     consultation_summary: I used Google Map Maker to create boundries of the counties in NC.  Then showed patron how to export map.
@@ -95,6 +103,7 @@ eight:
 nine:
     id: 9
     title: Photoshop Remove Background
+    author: Henry James
     date: 2012-11-23
     patron_request: I have to create a poster for a class assignment and need help removing a background from an image I want to include in the poster. 
     consultation_summary: I showed the patron how to use the magic wand feature in Photoshop to make the background translucent.
@@ -106,6 +115,7 @@ nine:
 ten:
     id: 10
     title: Wordpress Create Website
+    author: Ernest Hemingway
     date: 2012-11-24
     patron_request: I need to create a Wordpress site for a group assignment in my class. 
     consultation_summary: I showed the patron the option to use ncsu servers or wordpress servers to use the site.  The patron chose to use the wordpress site to create her website.  I showed her how to create site choose theme manage permissions and create and edit pages.
