@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_filter :require_login, :only => [:new, :create]
+  before_filter :require_login, :only => [:new, :create, :edit]
+  before_filter :authorize_comment, :except => [:index, :show, :new]
   # GET /comments
   # GET /comments.json
   def index

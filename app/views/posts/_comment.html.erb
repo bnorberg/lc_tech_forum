@@ -33,4 +33,13 @@
 	  <b>Status:</b>
 	  <%= comment.status %>
 	</p>
+	<p>
+<% if current_user %>		
+	<% if current_user.username == comment.author %>
+	<br />
+		<span class="test" id="comment_edit"><%= link_to 'Edit', edit_post_path(comment.post_id) %></span>
+	</p>
+	<br /><br />
+	<% end %>
+<% end %>
 </div>

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #authenticates_with_sorcery!
+  acts_as_voter
   attr_accessible :username, :email, :password, :password_confirmation
   
   def self.from_omniauth(auth)

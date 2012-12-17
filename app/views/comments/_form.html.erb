@@ -21,7 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :author %><br />
+<% if current_user %>
 	<%= f.text_field :author, :value => current_user.username %>
+<% else %>
+	<%= f.text_field :author %>
+<% end %>
   </div>	
   <div class="field">
     <%= f.label :date %><br />
