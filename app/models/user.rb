@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  acts_as_voter
+  has_many :evaluations, class_name: "RSEvaluation", as: :source
+
+  has_reputation :votes, source: {reputation: :votes, of: :haikus}, aggregated_by: :sum
+  
   attr_accessible :username, :email, :password, :password_confirmation
   
   def self.from_omniauth(auth)
@@ -14,7 +17,9 @@ class User < ActiveRecord::Base
       end
   end
 
-    
+  def voted_for?(haiku)
+    evaluations.where(target_type: haiku.class, target_id: haiku.id).present?
+  end
    # validates_confirmation_of :password
     #validates_presence_of :password, :on => :create
     #validates_presence_of :username

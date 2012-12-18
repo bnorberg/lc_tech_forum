@@ -14,6 +14,13 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
     end
   end
+  
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @post = Post.find(params[:id])
+    @post.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
+  end
 
   # GET /posts/1
   # GET /posts/1.json

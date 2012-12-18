@@ -1,64 +1,63 @@
 <% if current_user %>
-  Logged in as <%= current_user.username %>.
-  <%= link_to "Log out", logout_path, :class => "logout" %>
-<% else %>
-  Not logged in.
-  <%= link_to " Log in", login_path %>.
-<% end %>
-<div class="home_nav"><span class="test"><%= link_to 'Home', posts_path %></span></div>
-<h3><%= @post.title %></h3>
-<div class="posts">
-	<p>
-	  <b>Title:</b>
-	  <%= @post.title %>
-	</p>
-	<p>
-	  <b>Author:</b>
-	  <%= @post.author %>
-	</p>
-
-	<p>
-	  <b>Date:</b>
-	  <%= @post.updated_at.localtime.to_s.sub('-0500', '') %>
-	</p>
-
-	<p>
-	  <b>Patron request:</b>
-	  <%= @post.patron_request %>
-	</p>
-
-	<p>
-	  <b>Consultation summary:</b>
-	  <%= @post.consultation_summary %>
-	</p>
-
-	<p>
-	  <b>Resources used:</b>
-	  <%= get_links(@post.resources_used) %>
-	</p>
-
-	<p>
-	  <b>Status:</b>
-	  <%= @post.status %>
-	</p>
-	<br />
-	<% if @post.comments.count > 0 %>
-	<hr />
-	<p class="show_hide"><%= link_to_function "Show/Hide Thread", "$('#comments_thread').toggle()" %></p>
-<% end %>	
-</div>
-<div id="comments_thread" style="display:none">
-<%= render partial: 'comment', collection: @post.comments %>
-</div>
-<br />
-<span class="test"><%= link_to_function "Post a New Comment", "$('#post_comment').toggle()"%></span>
-<% if current_user %>
-<% if current_user.username == @post.author %>
-	<span class="test"><%= link_to 'Edit', edit_post_path(@post) %></span>
-<% end %>
-<% end %>
-<br />
-<div id="post_comment" style="display:none">
-	<%= render partial: 'comments/form' %>
-</div>	
-<br />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>
+			Logged in as <%= current_user.username %>. <%= link_to "Log out", logout_path, :class => "logout" %> <% else %> Not logged in. <%= link_to " Log in", login_path %>. <% end %>
+		</p>
+		<div class="home_nav">
+			<span class="test"><%= link_to 'Home', posts_path %></span>
+		</div>
+		<h3>
+			<%= @post.title %>
+		</h3>
+		<div class="posts">
+			<p>
+				<b>Title:</b> <%= @post.title %>
+			</p>
+			<p>
+				<b>Author:</b> <%= @post.author %>
+			</p>
+			<p>
+				<b>Date:</b> <%= @post.updated_at.localtime.to_s.sub('-0500', '') %>
+			</p>
+			<p>
+				<b>Patron request:</b> <%= @post.patron_request %>
+			</p>
+			<p>
+				<b>Consultation summary:</b> <%= @post.consultation_summary %>
+			</p>
+			<p>
+				<b>Resources used:</b> <%= get_links(@post.resources_used) %>
+			</p>
+			<p>
+				<b>Status:</b> <%= @post.status %>
+			</p>
+			<% if @post.comments.count > 0 %>
+			<hr>
+			<br>
+			<p class="show_hide" style="display:inline">
+				<%= link_to_function "Show/Hide Thread", "$('#comments_thread').toggle()" %>
+			</p><% end %>
+			<p class="recommend">
+			 <% if current_user && !current_user.voted_for?(@post) %> <span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), method: "post" %></span> <span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), method: "post" %></span><% end %><span class="rep">Reputation = <%= @post.reputation_for(:votes).to_i %></span>
+			</p><br>
+		</div>
+		<div id="comments_thread" style="display:none">
+			<%= render partial: 'comment', collection: @post.comments %>
+		</div>
+		<p>
+			<br>
+			<span class="test"><%= link_to_function "Post a New Comment", "$('#post_comment').toggle()"%></span> <% if current_user %> <% if current_user.username == @post.author %> <span class="test"><%= link_to 'Edit', edit_post_path(@post) %></span> <% end %> <% end %><br>
+		</p>
+		<div id="post_comment" style="display:none">
+			<%= render partial: 'comments/form' %>
+		</div>
+		<p>
+			<br>
+		</p>
+	</body>
+</html>

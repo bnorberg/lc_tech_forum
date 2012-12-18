@@ -12,18 +12,22 @@ class ApplicationController < ActionController::Base
   end
   
   def authorize_post
-    unless current_user.username == Post.find(params[:id]).author
-      flash[:notice] = "You cannot edit other's posts"
-      redirect_back_or_to root_url
-      false
-    end
+    unless(params.has_key?(:type))
+      unless current_user.username == Post.find(params[:id]).author
+        flash[:notice] = "You cannot edit other's posts"
+        redirect_back_or_to root_url
+        false
+      end
+    end  
   end
   
   def authorize_comment
-    unless current_user.username == Comment.find(params[:id]).author
-      flash[:notice] = "You cannot edit other's comments"
-      redirect_back_or_to root_url
-      false
-    end
+    unless(params.has_key?(:type))
+      unless current_user.username == Comment.find(params[:id]).author
+        flash[:notice] = "You cannot edit other's comments"
+        redirect_back_or_to root_url
+        false
+      end
+    end  
   end
 end

@@ -7,7 +7,11 @@ LcTechForum::Application.routes.draw do
   resources :sessions
 
   root to: 'posts#index'
-  resources :comments
+  resources :posts do
+    member { post :vote }
+  end
   match "/auth/:provider/callback" => "sessions#create"
-  resources :posts
+  resources :comments do
+    member { post :vote }
+  end
 end

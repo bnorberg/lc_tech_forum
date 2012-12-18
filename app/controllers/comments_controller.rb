@@ -11,6 +11,13 @@ class CommentsController < ApplicationController
       format.json { render json: @comments }
     end
   end
+  
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @comment = Comment.find(params[:id])
+    @comment.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
+  end
 
   # GET /comments/1
   # GET /comments/1.json

@@ -741,6 +741,21 @@ input[type=checkbox] {
 	float:right;
 	padding-right:1em;
 }​
+.show_hide{
+	display:inline;
+}
+.recommend {
+	display:inline;
+	margin-left:500px;
+}
+.up, .down {
+	padding-right:20px;
+	float:right;
+	margin-top:-20px;
+}
+.rep {
+	margin-right:15px;
+}
 div.field_with_errors label {
 color: red;
 font-weight: bold
