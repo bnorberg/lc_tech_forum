@@ -36,22 +36,22 @@
 			<p>
 				<b>Status:</b> <%= @post.status %>
 			</p>
+				<hr>
+				<br>
 			<% if @post.comments.count > 0 %>
-			<hr>
-			<br>
 			<p class="show_hide" style="display:inline">
 				<%= link_to_function "Show/Hide Thread", "$('#comments_thread').toggle()" %>
 			</p><% end %>
 			<p class="recommend">
-			 <% if current_user && !current_user.voted_for?(@post) %> <span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), method: "post" %></span> <span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), method: "post" %></span><% end %><span class="rep">Reputation = <%= @post.reputation_for(:votes).to_i %></span>
-			</p><br>
+			 <% if current_user && !current_user.voted_for?(@post) %> <span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), method: "post" %></span> <span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), method: "post" %></span><% end %><br><span class="rep">Reputation = <%= @post.reputation_for(:votes).to_i %></span>
+			</p><br><br>
 		</div>
 		<div id="comments_thread" style="display:none">
 			<%= render partial: 'comment', collection: @post.comments %>
 		</div>
 		<p>
 			<br>
-			<span class="test"><%= link_to_function "Post a New Comment", "$('#post_comment').toggle()"%></span> <% if current_user %> <% if current_user.username == @post.author %> <span class="test"><%= link_to 'Edit', edit_post_path(@post) %></span> <% end %> <% end %><br>
+			<span class="test"><%= link_to_function "Post a New Comment", "$('#post_comment').toggle()"%></span> <% if current_user %> <% if current_user.username == @post.author %> <span class="test"><%= link_to 'Edit', edit_post_path(@post) %></span> <% end %><% end %><br>
 		</p>
 		<div id="post_comment" style="display:none">
 			<%= render partial: 'comments/form' %>
