@@ -36,6 +36,7 @@ content: ""
 a img {
 border: none
 }
+
 .fancy-button-reset-base-class,input[type=submit] {
 font-family: "Lucida Grande",Lucida,Arial,sans-serif;
 background: url('/images/button_bg.png?1301401396') repeat-x bottom left;
@@ -83,7 +84,7 @@ margin: 50px auto 30px;
 color: #2d4159;
 padding: 20px;
 width: 85%;
-min-width: 600px;
+min-width: 700px;
 max-width: 1250px;
 min-height: 280px;
 position: relative;
@@ -748,6 +749,10 @@ input[type=checkbox] {
 	display:inline;
 	float:right;
 	margin-top:-25px;
+}
+img:hover {
+	opacity:.7;
+	cursor:pointer;
 }
 div.field_with_errors label {
 color: red;

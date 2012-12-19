@@ -40,7 +40,7 @@
 <% if current_user %>		
 	<% if current_user.username == comment.author %>
 	<br />
-		<span class="test" id="comment_edit"><%= link_to 'Edit', edit_post_path(comment.post_id) %></span>
+		<span class="test" id="comment_edit"><%= link_to 'Edit', edit_comment_path(comment.id) %></span>
 	</p>
 	<br /><br />
 	<% end %>

@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     unless(params.has_key?(:type))
       unless current_user.username == Comment.find(params[:id]).author
         flash[:notice] = "You cannot edit other's comments"
-        redirect_back_or_to root_url
+        redirect_back_or_to post_path(params[:post_id])
         false
       end
     end  
