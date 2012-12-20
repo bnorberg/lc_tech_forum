@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
             { :reputation => :comments }], :aggregated_by => :sum
 
     has_reputation :posts,
-        :source => { :reputation => :votes, :of => :posts }
+        :source => [{ :reputation => :votes, :of => :posts }, { :reputation => :votes, :of => :comments }], :aggregated_by => :sum
 
     has_reputation :comments,
         :source => { :reputation => :votes, :of => :comments }
