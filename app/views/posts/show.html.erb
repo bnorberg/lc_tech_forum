@@ -47,7 +47,7 @@
 			</p><br><br>
 		</div>
 		<div id="comments_thread" style="display:none">
-			<%= render partial: 'comment', collection: @post.comments %>
+			<%= render partial: 'comment', collection: @post.comments.find_with_reputation(:votes, :all, order: "votes desc") %>
 		</div>
 		<p>
 			<br>

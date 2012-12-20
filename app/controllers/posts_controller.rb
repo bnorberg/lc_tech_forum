@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @q = Post.includes(:comments).search(params[:q])
-    @posts = @q.result(:distinct => true).paginate(:page =>params[:page], :per_page => 5)
+    @posts = @q.result(:distinct => true).paginate(:page =>params[:page], :per_page => 25)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,7 +28,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comment.post_id = @post.id
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
