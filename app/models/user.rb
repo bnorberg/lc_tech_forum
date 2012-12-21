@@ -1,20 +1,13 @@
 class User < ActiveRecord::Base
-  #has_many :evaluations, class_name: "RSEvaluation", as: :source
   has_many :posts
   has_many :comments
   
-  has_reputation :expertise,
-        :source => [
-            { :reputation => :posts},
-            { :reputation => :comments }], :aggregated_by => :sum
 
-    has_reputation :posts,
+    has_reputation :votes,
         :source => [{ :reputation => :votes, :of => :posts }, { :reputation => :votes, :of => :comments }], :aggregated_by => :sum
 
-    has_reputation :comments,
-        :source => { :reputation => :votes, :of => :comments }
-  
-  #has_reputation :votes, source: {reputation: :votes, of: :comments}, aggregated_by: :sum
+    #has_reputation :comments,
+       # :source => { :reputation => :votes, :of => :comments }
   
   attr_accessible :username, :email, :password, :password_confirmation
   
