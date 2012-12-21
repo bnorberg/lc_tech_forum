@@ -34,15 +34,16 @@
 	  <%= comment.status %>
 	</p>
 	<p>
+		<% if current_user %>		
+			<% if current_user.username == comment.author %>
+			<br />
+				<span class="test" id="comment_edit"><%= link_to 'Edit', edit_comment_path(comment.id) %></span>
+			</p>
+			<br /><br />
+			<% end %>
 		<p class="recommend">
 		 <% if current_user && !current_user.voted_for?(comment) %> <span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), method: "comment" %></span> <span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), method: "comment" %></span><% end %><br><span class="rep">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
 		</p><br><br>
-<% if current_user %>		
-	<% if current_user.username == comment.author %>
-	<br />
-		<span class="test" id="comment_edit"><%= link_to 'Edit', edit_comment_path(comment.id) %></span>
-	</p>
-	<br /><br />
-	<% end %>
+
 <% end %>
 </div>

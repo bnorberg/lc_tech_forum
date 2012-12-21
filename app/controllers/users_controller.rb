@@ -32,7 +32,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    @post = Post.new
+    @comment = Comment.new
+    @post.user_id = @user.id
+    @comment.user_id = @user.id
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @comment }

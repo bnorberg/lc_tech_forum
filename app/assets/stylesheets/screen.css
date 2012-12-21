@@ -742,8 +742,8 @@ input[type=checkbox] {
 	font-weight:bold;
 }
 #comment_edit {
-	float:right;
-	padding-right:1em;
+	display:inline;
+	float:left;
 }​
 .show_hide{
 	display:inline;

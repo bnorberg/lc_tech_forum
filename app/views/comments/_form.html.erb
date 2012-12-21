@@ -15,9 +15,6 @@
   <div class="field">
     <%= f.hidden_field :post_id %>
   </div>
-<div class="field">
-    <%= f.hidden_field :user_id %>
-  </div>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -49,6 +46,9 @@
   <div class="field">
     <%= f.label :status %><br />
     <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id %>
   </div>
 <br /><br/><br />
   <div class="actions" style="float:left">
