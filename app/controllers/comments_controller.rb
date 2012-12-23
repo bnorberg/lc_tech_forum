@@ -16,7 +16,10 @@ class CommentsController < ApplicationController
     value = params[:type] == "up" ? 1 : -1
     @comment = Comment.find(params[:id])
     @comment.add_or_update_evaluation(:votes, value, current_user)
-    redirect_to :back, notice: "Thank you for voting"
+    #redirect_to :back, notice: "Thank you for voting"
+    respond_to do |format|
+      format.js 
+    end
   end
 
   # GET /comments/1
@@ -27,6 +30,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @comment }
+      format.js
     end
   end
 
@@ -71,6 +75,7 @@ class CommentsController < ApplicationController
       else
         format.html { render action: "edit" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

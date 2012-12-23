@@ -7,10 +7,12 @@ class User < ActiveRecord::Base
        :aggregated_by => :sum
   
   has_reputation :posts,
-       :source => { :reputation => :votes, :of => :posts }
+       :source => { :reputation => :votes, :of => :posts },
+       :aggregated_by => :sum
 
    has_reputation :comments,
-       :source => { :reputation => :votes, :of => :comments }
+       :source => { :reputation => :votes, :of => :comments },
+       :aggregated_by => :sum
 
   
   attr_accessible :username, :email, :password, :password_confirmation
@@ -24,11 +26,15 @@ class User < ActiveRecord::Base
         user.provider = auth["provider"]
         user.uid = auth["uid"]
         user.username = auth["info"]["name"]
+        user.email = auth["info"]["email"]
+        user.access_token = auth["credentials"]["token"]
+        user.secret = auth["credentials"]["secret"]
+        user.save
       end
   end
 
-  def voted_for?(haiku)
-    evaluations.where(target_type: haiku.class, target_id: haiku.id).present?
+  def voted_for?(post)
+    evaluations.where(target_type: post.class, target_id: post.id).present?
   end
    # validates_confirmation_of :password
     #validates_presence_of :password, :on => :create

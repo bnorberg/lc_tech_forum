@@ -42,8 +42,7 @@
 			<br /><br />
 			<% end %>
 		<p class="recommend">
-		 <% if current_user && !current_user.voted_for?(comment) %> <span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), method: "comment" %></span> <span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), method: "comment" %></span><% end %><br><span class="rep">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
+		 <% if current_user && !current_user.voted_for?(comment) %> <span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> <span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span><% end %><br><span id="<%=comment.id%>">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
 		</p><br><br>
-
 <% end %>
 </div>

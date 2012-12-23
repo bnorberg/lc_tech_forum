@@ -47,9 +47,10 @@
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </div>
+  <% if current_user %>
   <div class="field">
-    <%= f.hidden_field :user_id %>
-  </div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div><% end %>
 <br /><br/><br />
   <div class="actions" style="float:left">
     <%= f.submit %></span>

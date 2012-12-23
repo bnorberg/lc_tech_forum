@@ -19,7 +19,10 @@ class PostsController < ApplicationController
     value = params[:type] == "up" ? 1 : -1
     @post = Post.find(params[:id])
     @post.add_or_update_evaluation(:votes, value, current_user)
-    redirect_to :back, notice: "Thank you for voting"
+    #redirect_to :back, notice: "Thank you for voting"
+    respond_to do |format|
+      format.js
+    end  
   end
 
   # GET /posts/1
@@ -31,6 +34,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
+      format.js
     end
   end
 
@@ -78,6 +82,7 @@ class PostsController < ApplicationController
       else
         format.html { render action: "edit" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

@@ -1,0 +1,2 @@
+$('#rep').html("Reputation = <%= @post.reputation_for(:votes).to_i %>");
+$('#user_rep').html("(<%= current_user.reputation_for(:votes).to_i %>)");
