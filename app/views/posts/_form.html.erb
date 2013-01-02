@@ -36,7 +36,7 @@
   </div>
   <div class="field">
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.select :status, ['open','closed'], :include_blank => true, :class => 'select_size' %>
   </div>
 <% if current_user %>
   <div class="field">
