@@ -1,5 +1,6 @@
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q do |f| %>	
 <div class="new_home">
+	<span class="directions"><%= link_to 'How to Use', '/directions.html', :target => '_blank' %></span>
  <div id="title_cont">
   		<%= f.text_field :title_cont %>  <%= f.submit %></div>	
 <div class="auth">
@@ -10,7 +11,10 @@
 <% else %>
   <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
 <% end %>	
-</div><p><%= link_to '+ Add New Topic', new_post_path, class: "new_post" %></p><br /><br /></div>
+</div><p><%= link_to '+ Add New Topic', new_post_path, class: "new_post" %> </p><br /><br /></div>
+<% if @posts.empty? %>
+  <h2> <span style="font-size:16pt; font-weight:normal; font-family:Arial, Helvetica, sans-serif; color:red">There are no posts that match your query.  Please try a <%= link_to 'new search', posts_path, :class => 'new_search' %>.</span></h2>
+<% else %>
 <p class="paginate"><%= will_paginate @posts %></p><br />
 <table class="home">
   <tr>
@@ -31,4 +35,5 @@
 </table>
 
 <br />
+<% end %>
 <% end %>

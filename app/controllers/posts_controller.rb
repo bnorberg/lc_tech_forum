@@ -5,6 +5,7 @@ class PostsController < ApplicationController
    
   # GET /posts
   # GET /posts.json
+  
   def index
     @q = Post.includes(:comments).search(params[:q])
     @posts = @q.result(:distinct => true).paginate(:page =>params[:page], :per_page => 25).order('updated_at DESC')

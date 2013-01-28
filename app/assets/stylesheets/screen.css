@@ -84,7 +84,7 @@ margin: 50px auto 30px;
 color: #2d4159;
 padding: 20px;
 width: 85%;
-min-width: 700px;
+min-width: 950px;
 max-width: 1250px;
 min-height: 280px;
 position: relative;
@@ -323,6 +323,7 @@ div.auth{
 	float:right;
 }
 div.auth a {
+	display:inline;
 	font-size:1em;
 	color:white;
 	float:right;
@@ -330,6 +331,18 @@ div.auth a {
 	diplay:inline;
 }
 div.auth a:hover {
+color: #d3dd8a;
+}
+span.directions {
+	float:right;
+	margin-top:-20px;
+}
+.directions a {
+	font-size:.6em;
+	text-decoration:none;
+	color:white;
+}
+span.directions a:hover {
 color: #d3dd8a;
 }
 h2,h3,h4 {
