@@ -335,10 +335,10 @@ color: #d3dd8a;
 }
 span.directions {
 	float:right;
-	margin-top:-20px;
+	margin-top:-11px;
 }
 .directions a {
-	font-size:.6em;
+	font-size:.5em;
 	text-decoration:none;
 	color:white;
 }
