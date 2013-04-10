@@ -22,7 +22,7 @@
 				<b>Author:</b> <%= @post.author %>
 			</p>
 			<p>
-				<b>Date:</b> <%= @post.updated_at.localtime.to_s.sub('-0500', '').sub('+0000', '') %>
+				<b>Date:</b> <%= @post.updated_at.localtime.to_s.sub(/\-\d\d\d\d/, '') %>
 			</p>
 			<p>
 				<b>Patron request:</b> <%= @post.patron_request %>
