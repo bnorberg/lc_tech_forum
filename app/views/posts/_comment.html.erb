@@ -30,14 +30,11 @@
 	</p>
 
 	<p>
-	  <b>Status:</b>
-	  <%= comment.status %>
-	</p>
-	<p>
+		<br /><br />
 		<% if current_user %>		
 			<% if current_user.username == comment.author %>
 			<br />
-				<span class="test" id="comment_edit"><%= link_to 'Edit', edit_comment_path(comment.id) %></span>
+				<span class="test" id="comment_edit"><%= link_to 'Edit', edit_comment_path(comment.id) %></span><span class="test"><%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 			</p>
 			<br /><br />
 			<% end %>

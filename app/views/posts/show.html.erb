@@ -33,9 +33,7 @@
 			<p>
 				<b>Web resources used:</b> <%= get_links(@post.resources_used) %>
 			</p>
-			<p>
-				<b>Status:</b> <%= @post.status %>
-			</p>
+			<br>
 				<hr>
 				<br>
 			<% if @post.comments.count > 0 %>
@@ -51,7 +49,7 @@
 		</div>
 		<p>
 			<br>
-			<span class="test"><%= link_to_function "Post a New Comment", "$('#post_comment').toggle()"%></span> <% if current_user %> <% if current_user.username == @post.author %> <span class="test"><%= link_to 'Edit', edit_post_path(@post) %></span> <% end %><% end %><br>
+			<span class="test"><%= link_to_function "Post a New Comment", "$('#post_comment').toggle()"%></span> <% if current_user %> <% if current_user.username == @post.author %> <span class="test"><%= link_to 'Edit', edit_post_path(@post) %></span> <span class="test"><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></span><% end %><% end %><br>
 		</p>
 		<div id="post_comment" style="display:none">
 			<%= render partial: 'comments/form' %>

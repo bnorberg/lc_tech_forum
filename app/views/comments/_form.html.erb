@@ -43,9 +43,6 @@
     <%= f.label "Web Resources used (put space between links)" %><br />
     <%= f.text_field :resources_used %>
   </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.select :status, ['open','closed'], :include_blank => true %></div>
   <% if current_user %>
   <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id, :class => 'select_size' %>
