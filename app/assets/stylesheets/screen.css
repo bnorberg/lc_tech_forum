@@ -586,7 +586,7 @@ div.cancel {
 	margin-left:5px;
 }
 
-.test a {
+.sbutton a {
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-o-border-radius: 6px;
@@ -625,7 +625,7 @@ div.cancel {
 	margin-left: 10px;
 	display:inline;
 }
-.test a:hover,div.test a:focus {
+.sbutton a:hover,div.sbutton a:focus {
 background-color: #11467c;
 /*original color
 background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #769bbf), color-stop(10%, #466d94), color-stop(50%, #283f55), color-stop(50%, #23374b), color-stop(100%, #34516d));
@@ -638,10 +638,10 @@ background-image: linear-gradient(#bf7677,#944646 10%,#552829 50%,#4b2323 50%,#6
 border:solid 1px #15202c;
 text-shadow: #02070c 0px 1px 1px
 }
-div.test a:hover,div.test a:hover:visited,div.test a:focus,div.test a:focus:visited {
+div.sbutton a:hover,div.sbutton a:hover:visited,div.sbutton a:focus,div.sbutton a:focus:visited {
 color: #fff
 }
-.test a:active {
+.sbutton a:active {
 background-color: #0f3f6e;
 /*original color
 background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #283f55), color-stop(30%, #2b445c), color-stop(50%, #253a4e), color-stop(50%, #203244), color-stop(100%, #355371));
@@ -658,7 +658,7 @@ text-shadow: #000 0px -1px -1px;
 -o-box-shadow: #192836 0 0.08em 0.2em 1px inset;
 box-shadow: #192836 0 0.08em 0.2em 1px inset
 }
-.test a:active,input[type=submit]:active:visited {
+.sbutton a:active,input[type=submit]:active:visited {
 color: #fff
 }	
 input[type=submit] {

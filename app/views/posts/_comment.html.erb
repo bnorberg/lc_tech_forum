@@ -28,18 +28,27 @@
 	  <b>Web Resources used:</b>
 	  <%= get_links(comment.resources_used) %>
 	</p>
-
-	<p>
-		<br /><br />
+	<br />
+	<hr />
+		<br />
+<!-- Check if user logged in to provide thumbs up and down -->		
 		<% if current_user %>		
+<!-- Check if user logged in equals user that created comment to provide delete and edit buttons -->		
 			<% if current_user.username == comment.author %>
+				<span class="sbutton" id="comment_edit"><%= link_to 'Edit Comment', edit_comment_path(comment.id) %></span><span class="sbutton"><%= link_to 'Delete Comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 			<br />
-				<span class="test" id="comment_edit"><%= link_to 'Edit', edit_comment_path(comment.id) %></span><span class="test"><%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-			</p>
-			<br /><br />
 			<% end %>
-		<p class="recommend">
-		 <% if current_user && !current_user.voted_for?(comment) %> <span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> <span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span><% end %><br><span id="<%=comment.id%>">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
-		</p><br><br>
-<% end %>
+			<p class="recommend">
+		 	<% if current_user && !current_user.voted_for?(comment) %> 
+				<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> 
+				<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span>
+			<% end %>
+		<br />	<br/>
+				<span id="<%=comment.id%>" class="recommend">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
+			</p><br/><br />	
+	   	<% else %>	
+		<br/>
+			<span id="<%=comment.id%>" class="recommend">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
+		</p><br/>
+		<% end %>
 </div>
