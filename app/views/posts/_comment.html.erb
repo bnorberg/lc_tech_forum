@@ -19,18 +19,10 @@
 		  <b>Consultation summary:</b>
 		  <%= comment.consultation_summary %>
 		</p>
-<!-- Check if web resources exist -->		
-		<% if !comment.resources_used.blank? %>
 			<p>
 			  <b>Web Resources used:</b>
 			  <%= get_links(comment.resources_used) %>
-			</p><br /><br/>
-		<% else %>	
-			<p>
-			  <b>Web Resources used:</b>
-			  none
-			</p><br /><br/>
-		<% end%>	
+			</p><br /><br/>	
 	<!-- Check if user logged in to provide thumbs up and down -->		
 			<% if current_user %>		
 	<!-- Check if user logged in equals user that created comment to provide delete and edit buttons -->		
