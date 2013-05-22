@@ -13,11 +13,27 @@
 		<div class="home_nav">
 			<span class="sbutton"><%= link_to 'Home', posts_path %></span>
 		</div>
+		<br/>
 		<h3><%= @post.title %></h3>
+		<div class="respondbs">
+			<span class="sbutton" style="display:inline"><%= link_to_function "Reply", "$('#post_comment').toggle()"%>
+			</span>
+			
+			
+<!-- To show/hide thread>			
+			<% if @post.comments.count > 0 %>
+				<p id="show_hide" class="sbutton" style="display:inline">
+					<%= link_to_function "Show/Hide Thread", "$('#comments_thread').toggle()" %>
+				</p>
+			<% end %> -->
+
+
+		</div>		
+		<div id="post_comment" style="display:none">
+				<%= render partial: 'comments/form' %>
+		</div>
+		<br />
 		<div class="posts">
-			<p>
-				<b>Title:</b> <%= @post.title %>
-			</p>
 			<p>
 				<b>Author:</b> <%= @post.author %>
 			</p>
@@ -33,50 +49,60 @@
 			<p>
 				<b>Web resources used:</b> <%= get_links(@post.resources_used) %>
 			</p>
-			<br/>
-			<hr/>
-			<br/>
+			<br />
 	<!-- Check if number of comments to determine if a show/hide links needs to exist -->
 			<% if @post.comments.count > 0 %>
-				<p class="show_hide" style="display:inline">
-				<%= link_to_function "Show/Hide Thread", "$('#comments_thread').toggle()" %>
+				<p class="precommend">
+<!-- Check if user logged in to provide thumbs up and down -->		
+				<% if current_user && !current_user.voted_for?(@post) %> 
+					<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), :method => :post, :remote => true %>
+					</span> 
+					<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), :method => :post, :remote => true %>
+					</span>
+				<% end %>
+				<br/>
+				<span id="rep">Reputation = <%= @post.reputation_for(:votes).to_i %>
+				</span>
 				</p>
-			<% end %>
-			<p class="recommend">
-	<!-- Check if user logged in to provide thumbs up and down -->		
-			<% if current_user && !current_user.voted_for?(@post) %> 
-				<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), :method => :post, :remote => true %>
-				</span> 
-				<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), :method => :post, :remote => true %>
+				<p>
+			<!-- Check if user logged in equals user that created post to provide delete and edit buttons -->	
+				<% if current_user %> 
+					<% if current_user.username == @post.author %> 
+						<div class="edbuttons"><span class="sbutton"><%= link_to 'Edit Topic', edit_post_path(@post) %>
+						</span> 
+						<span class="sbutton"><%= link_to 'Delete Topic', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+						</span></div>
+					<% end %>
+				<% end %>
+					</p>
+			<% else %>
+				<p class="postr">
+<!-- Check if user logged in to provide thumbs up and down -->		
+				<% if current_user && !current_user.voted_for?(@post) %> 
+					<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), :method => :post, :remote => true %>
+					</span> 
+					<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), :method => :post, :remote => true %>
+					</span>
+				<% end %>
+				<br/>
+				<span>Reputation = <%= @post.reputation_for(:votes).to_i %>
 				</span>
+				</p>
+			<p>
+		<!-- Check if user logged in equals user that created post to provide delete and edit buttons -->	
+			<% if current_user %> 
+				<% if current_user.username == @post.author %> 
+					<div class="edbuttons"><span class="sbutton"><%= link_to 'Edit Topic', edit_post_path(@post) %>
+					</span> 
+					<span class="sbutton"><%= link_to 'Delete Topic', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+					</span></div>
+				<% end %>
 			<% end %>
-			<br/>
-			<span id="rep">Reputation = <%= @post.reputation_for(:votes).to_i %>
-				</span>
-			</p>
-			<br/><br/>
-		</div>
-		<div id="comments_thread" style="display:none">
+				</p>
+			</div>
+			<% end %><br /><br />
+		<div id="comments_thread">
 				<%= render partial: 'comment', collection: @post.comments.find_with_reputation(:votes, :all, order: "votes desc") %>
 		</div>
-		<p>
-		<br/>
-		<span class="sbutton"><%= link_to_function "Post a New Comment", "$('#post_comment').toggle()"%>
-		</span> 
-	<!-- Check if user logged in equals user that created post to provide delete and edit buttons -->	
-		<% if current_user %> 
-			<% if current_user.username == @post.author %> 
-				<span class="sbutton"><%= link_to 'Edit Post', edit_post_path(@post) %>
-				</span> 
-				<span class="sbutton"><%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-				</span>
-			<% end %>
-		<% end %>
-		<br/>
-		</p>
-		<div id="post_comment" style="display:none">
-			<%= render partial: 'comments/form' %>
-		</div>
-		<br />
 	</body>
 </html>

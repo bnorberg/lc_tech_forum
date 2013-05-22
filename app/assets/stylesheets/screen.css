@@ -184,29 +184,38 @@ a.new_post {
 }
 table.home {
 width:100%;
-border-top:1px solid;
-border-right:1px solid;
-border-left:1px solid;
 border-collapse:collapse;
 padding:5px;
+font-size:14pt;
 }
 table.home td {
 	padding:10px;
-	border:1px solid;
 }
 table.home th {
 	padding:5px;
+	padding-bottom:15px;
 	font-weight:bold;
+	font-size:18pt;
+	color:#848484;
+}
+div.respondbs {
+	dislplay:block;
+	padding: 5px;
+	float:left;
 }
 div.posts{
-	border: solid;
 	padding: 5px;
+	margin-top:50px;
+	font-size:14pt;
 }
-div.comments{
-	border: solid;
+div#comments{
 	padding: 5px;
-	margin-top:1px;
+	margin-top:5px;
 	margin-left: 30px;
+	font-size:14pt;
+}
+div.ccontents{
+	padding:5px;
 }
 .resource_links {
 	display:block;
@@ -214,10 +223,10 @@ div.comments{
 	margin-left:40px;
 	margin-bottom:10px;
 }
-a.post_title, .resource_links a, a.logout, .show_hide a {
+a.post_title, .resource_links a, a.logout{
 	color:black;
 }	
-a.post_title:hover, .resource_links a:hover, a.logout:hover, .show_hide a:hover {
+a.post_title:hover, .resource_links a:hover, a.logout:hover {
 	    color: #fff;
 	    background-color: #000;
 }
@@ -579,6 +588,7 @@ font-size: 1.1em
 div.home_nav {
 	float:right;
 	margin-left:100px;
+	margin-top:-20px;
 }
 
 div.cancel {
@@ -792,13 +802,52 @@ input[type=checkbox] {
 	display:inline;
 	float:left;
 }​
-.show_hide{
+#show_hide{
 	display:inline;
 }
-.recommend {
+
+#post_comment {
+	margin-top:50px;
+}
+.postr {
+	display:inline;
+	float:right;
+	margin-top:-15px;
+	margin-right:15px;
+	font-size:11pt;
+}
+ .commentr {
+	display:inline;
+	float:right;
+	margin-right:-5px;
+	font-size:11pt;
+}
+ .repcomment {
 	display:inline;
 	float:right;
 	margin-top:-25px;
+	margin-right:15px;
+	font-size:11pt;
+}
+.precommend {
+	display:inline;
+	float:right;
+	margin-top:-20px;
+	margin-right:15px;
+	font-size:11pt;
+}
+.arecommend {
+	float:right;
+	margin-top:-35px;
+	margin-right:15px;
+	font-size:11pt;
+}
+.crecommend {
+	display:inline;
+	float:right;
+	margin-top:-70px;
+	margin-right:15px;
+	font-size:11pt;
 }
 img:hover {
 	opacity:.7;
@@ -811,3 +860,26 @@ font-weight: bold
 div.field_with_errors input {
 border: 3px solid red
 }
+.edbuttons{
+	font-size: 10px;
+	line-height: .5em;
+}
+.thumbs {
+	display:inline;
+	float:right;
+	margin-right:20px;
+}
+.rep {
+	display:inline;
+	float:right;
+	margin-right:-90px;
+	font-size:11pt;
+}
+.lastpost {
+	font-size: 10pt;
+	margin-left: 10px;
+}
+tr.odd td, div.odd div {
+background: #FAFAFA;
+}
+

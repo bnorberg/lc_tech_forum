@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'time_diff'
 gem 'jquery-rails'
 gem 'sorcery'
 gem 'ransack'

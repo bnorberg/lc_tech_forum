@@ -1,54 +1,56 @@
-<div class="comments">
-	<p>
-	  <b>Title:</b>
-	  <%= comment.title %>
-	</p>
-	
-	<p>
-	  <b>Author:</b>
-	  <%= comment.author %>
-	</p>
+<div id="comments" class="<%= cycle("odd", "even") -%>">
+	<div class-"ccontents">
+		<p>
+		  <b>Author:</b>
+		  <%= comment.author %>
+		</p>
 
-	<p>
-	  <b>Date:</b>
-	  <%= comment.updated_at.localtime.to_s.sub('-0500', '') %>
-	</p>
+		<p>
+		  <b>Date:</b>
+		  <%= comment.updated_at.localtime.to_s.sub(/\-\d\d\d\d/, '') %>
+		</p>
 
-	<p>
-	  <b>Patron request:</b>
-	  <%= comment.patron_request %>
-	</p>
+		<p>
+		  <b>Patron request:</b>
+		  <%= comment.patron_request %>
+		</p>
 
-	<p>
-	  <b>Consultation summary:</b>
-	  <%= comment.consultation_summary %>
-	</p>
+		<p>
+		  <b>Consultation summary:</b>
+		  <%= comment.consultation_summary %>
+		</p>
 
-	<p>
-	  <b>Web Resources used:</b>
-	  <%= get_links(comment.resources_used) %>
-	</p>
-	<br />
-	<hr />
+		<p>
+		  <b>Web Resources used:</b>
+		  <%= get_links(comment.resources_used) %>
+		</p>
 		<br />
-<!-- Check if user logged in to provide thumbs up and down -->		
-		<% if current_user %>		
-<!-- Check if user logged in equals user that created comment to provide delete and edit buttons -->		
-			<% if current_user.username == comment.author %>
-				<span class="sbutton" id="comment_edit"><%= link_to 'Edit Comment', edit_comment_path(comment.id) %></span><span class="sbutton"><%= link_to 'Delete Comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-			<br />
-			<% end %>
-			<p class="recommend">
-		 	<% if current_user && !current_user.voted_for?(comment) %> 
-				<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> 
-				<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span>
-			<% end %>
-		<br />	<br/>
-				<span id="<%=comment.id%>" class="recommend">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
-			</p><br/><br />	
-	   	<% else %>	
-		<br/>
-			<span id="<%=comment.id%>" class="recommend">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
-		</p><br/>
+	<!-- Check if user logged in to provide thumbs up and down -->		
+			<% if current_user %>		
+	<!-- Check if user logged in equals user that created comment to provide delete and edit buttons -->		
+				<% if current_user.username == comment.author %>
+					<p class="arecommend">
+						<p class="edbuttons"><span class="sbutton" id="comment_edit"><%= link_to 'Edit Reply', edit_comment_path(comment.id) %></span><span class="sbutton"><%= link_to 'Delete Reply', comment, method: :delete, data: { confirm: 'Are you sure?' } %></span></p>
+			 		<% if current_user && !current_user.voted_for?(comment) %> 
+						<p class="thumbs"><span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> 
+						<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span></p><br/>
+						<br/>
+						<span id="<%=comment.id%>" class="rep">Reputation = <%= comment.reputation_for(:votes).to_i %></span><br/>
+					<% end %>
+			  	<% else %>
+					<p class="crecommend">
+			 		<% if current_user && !current_user.voted_for?(comment) %> 
+						<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> 
+						<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span>
+						<br/>
+							<span id="<%=comment.id%>" class="commentr">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
+					<% end %>
+			  	<% end %>	
+				</p>
+		   <% else %>
+			<p>
+				<span id="<%=comment.id%>" class="repcomment">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
+			</p>
 		<% end %>
+	</div>
 </div>

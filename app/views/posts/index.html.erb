@@ -32,16 +32,25 @@
 		<table class="home">
   			<tr>
     			<th>Topic</th>
-    			<th>Original Creator</th>
+    			<th>Topic Creator</th>
 				<th>Posts</th>
-    			<th>Last Updated</th>
+    			<th>Latest Post</th>
   			</tr>
 			<% @posts.each do |post| %>
-  				<tr>
+  				<tr class="<%= cycle("odd", "even") -%>">
     				<td><%= link_to post.title, post, class: 'post_title' %></td>
     				<td><%= post.author %></td>
 					<td><%= post.comments.count + 1 %></td>
-					<td><%= post.updated_at.localtime.to_s.sub(/\-\d\d\d\d/, '') %></td>
+<!--Use Last Comment to be updated, if comments not blank -->
+					<% if !post.comments.blank? %>
+						<td><%= Time.diff(Time.now, post.comments.last.updated_at.localtime)[:diff].split('and')[0] %> ago
+							<br />
+							<span class="lastpost">by <%= post.comments.last.author %></span></td>
+					<% else %>
+						<td><%= Time.diff(Time.now, post.updated_at.localtime)[:diff].split('and')[0] %> ago
+							<br />
+							<span class="lastpost">by <%= post.author %></span></td>
+				    <% end %>
   				</tr>
 			<% end %>
 		</table>
