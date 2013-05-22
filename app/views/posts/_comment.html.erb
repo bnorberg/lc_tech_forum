@@ -19,11 +19,18 @@
 		  <b>Consultation summary:</b>
 		  <%= comment.consultation_summary %>
 		</p>
-
-		<p>
-		  <b>Web Resources used:</b>
-		  <%= get_links(comment.resources_used) %>
-		</p>
+<!-- Check if user logged in to provide thumbs up and down -->		
+		<% if !comment.resources_used.blank? %>
+			<p>
+			  <b>Web Resources used:</b>
+			  <%= get_links(comment.resources_used) %>
+			</p>
+		<% else %>	
+			<p>
+			  <b>Web Resources used:</b>
+			  none
+			</p>
+		<% end%>	
 		<br /><br/>
 	<!-- Check if user logged in to provide thumbs up and down -->		
 			<% if current_user %>		
