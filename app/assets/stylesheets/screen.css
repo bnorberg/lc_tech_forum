@@ -67,7 +67,7 @@ color: #2d4159;
 padding: 20px;
 width: 85%;
 min-width: 1150px;
-max-width: 1350px;
+max-width: 1150px;
 min-height: 280px;
 position: relative;
 line-height: 1.25em;
@@ -733,4 +733,7 @@ background: #FAFAFA;
 }
 .thread_title{
 	font-size:28pt;
+}
+.lastpost{
+	font-size:12pt;
 }
