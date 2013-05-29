@@ -39,7 +39,12 @@
 			<% @posts.each do |post| %>
   				<tr class="<%= cycle("odd", "even") -%>">
     				<td><%= link_to post.title, post, class: 'post_title' %></td>
-    				<td><%= post.author %></td>
+						<%if !post.user_id.blank?%>
+						<td><%= image_tag avatar_url(post.user), alt: 'avatar', class: 'avatarimage' %>
+							<%= post.author %></td>
+						<% else %>
+							<td><%= post.author %></td>
+						<% end %>
 					<td><%= post.comments.count + 1 %></td>
 <!--Use Last Comment to be updated, if comments not blank -->
 					<% if !post.comments.blank? %>

@@ -1,10 +1,12 @@
-<div id="comments" class="<%= cycle("odd", "even") -%>">
-	<div class-"ccontents">
-		<p>
-		  <b>Author:</b>
-		  <%= comment.author %>
-		</p>
-
+<div id="comments" style="clear: left;">
+	<table class="ccontents">
+		<tr class="<%= cycle("odd", "even") -%>">
+			<td>
+			<div class="avatar">
+				<p><%= image_tag avatar_url(comment.user), alt: 'avatar', class: 'avatarimage' %>
+			<p class="aname"><%= comment.author %></p>
+			</div>
+			<div class="consultinfo">
 		<p>
 		  <b>Date:</b>
 		  <%= comment.updated_at.localtime.to_s.sub(/\-\d\d\d\d/, '') %>
@@ -24,38 +26,45 @@
 			<p>
 			  <b>Web Resources used:</b>
 			  <%= get_links(comment.resources_used) %>
-			</p><br />
+			</p>
 		<% else %>	
 			<p>
 			  <b>Web Resources used:</b>
-			</p><br /><br/><br/>
-		<% end%>	
+			</p><br/><br/><br/>
+		<% end %>	
+		</div>
+		<div class="allbuttons">
 	<!-- Check if user logged in to provide thumbs up and down -->		
 			<% if current_user %>		
 	<!-- Check if user logged in equals user that created comment to provide delete and edit buttons -->		
 				<% if current_user.username == comment.author %>
-					<p class="arecommend">
-						<p class="edbuttons"><span class="sbutton" id="comment_edit"><%= link_to 'Edit Reply', edit_comment_path(comment.id) %></span><span class="sbutton"><%= link_to 'Delete Reply', comment, method: :delete, data: { confirm: 'Are you sure?' } %></span></p>
-			 		<% if current_user && !current_user.voted_for?(comment) %> 
-						<p class="thumbs"><span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> 
-						<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span></p><br/>
+					<% if current_user && !current_user.voted_for?(comment) %> 
+						<p class="thumbs">
+							<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> 
+							<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span>
 						<br/>
-						<span id="<%=comment.id%>" class="rep">Reputation = <%= comment.reputation_for(:votes).to_i %></span><br/>
+						<span id="<%=comment.id%>">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
+						</p>
 					<% end %>
+					<p class="sbutton" id="edbuttons"><%= link_to 'Edit', edit_comment_path(comment.id) %></p>
+					<p class="sbutton" id="edbuttons"><%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+					<br/>
 			  	<% else %>
-					<p class="crecommend">
-			 		<% if current_user && !current_user.voted_for?(comment) %> 
-						<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> 
-						<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span>
-						<br/>
-							<span id="<%=comment.id%>" class="commentr">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
-					<% end %>
+					<p class="thumbs">
+			 			<% if current_user && !current_user.voted_for?(comment) %> 
+							<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_comment_path(comment, type: "up"), :method => :post, :remote => true %></span> 
+							<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_comment_path(comment, type: "down"), :method => :post, :remote => true %></span>
+							<br/>
+							<span id="<%=comment.id%>">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
+						<% end %>
+				  	</p>
 			  	<% end %>	
-				</p>
 		   <% else %>
-			<p>
-				<span id="<%=comment.id%>" class="repcomment">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
-			</p>
+			<br/>
+				<span id="<%=comment.id%>" class="reputation">Reputation = <%= comment.reputation_for(:votes).to_i %></span>
 		<% end %>
 	</div>
+	</td>
+	</tr>
+	</table>
 </div>

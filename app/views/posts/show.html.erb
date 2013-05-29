@@ -1,9 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
 <!-- Check if user logged to change head banner links and text -->
 		<% if current_user %>		
 			<p>Logged in as <%= current_user.username %> <span id="user_rep">(<%= current_user.reputation_for(:votes).to_i %>)</span>. <%= link_to "Log out", logout_path, :class => "logout" %> 
@@ -14,95 +8,74 @@
 			<span class="sbutton"><%= link_to 'Home', posts_path %></span>
 		</div>
 		<br/>
-		<h3><%= @post.title %></h3>
+		<h3 class="thread_title"><%= @post.title %></h3>
 		<div class="respondbs">
 			<span class="sbutton" style="display:inline"><%= link_to_function "Reply", "$('#post_comment').toggle()"%>
 			</span>
-			
-			
-<!-- To show/hide thread>			
-			<% if @post.comments.count > 0 %>
-				<p id="show_hide" class="sbutton" style="display:inline">
-					<%= link_to_function "Show/Hide Thread", "$('#comments_thread').toggle()" %>
-				</p>
-			<% end %> -->
-
-
 		</div>		
 		<div id="post_comment" style="display:none">
 				<%= render partial: 'comments/form' %>
 		</div>
 		<br />
-		<div class="posts">
-			<p>
-				<b>Author:</b> <%= @post.author %>
-			</p>
-			<p>
-				<b>Date:</b> <%= @post.updated_at.localtime.to_s.sub(/\-\d\d\d\d/, '') %>
-			</p>
-			<p>
-				<b>Patron request:</b> <%= @post.patron_request %>
-			</p>
-			<p>
-				<b>Consultation summary:</b> <%= @post.consultation_summary %>
-			</p>
-			<p>
-				<b>Web resources used:</b> <%= get_links(@post.resources_used) %>
-			</p>
-			<br />
-	<!-- Check if number of comments to determine if a show/hide links needs to exist -->
-			<% if @post.comments.count > 0 %>
-				<p class="precommend">
-<!-- Check if user logged in to provide thumbs up and down -->		
-				<% if current_user && !current_user.voted_for?(@post) %> 
-					<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), :method => :post, :remote => true %>
-					</span> 
-					<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), :method => :post, :remote => true %>
-					</span>
-				<% end %>
-				<br/>
-				<span id="rep">Reputation = <%= @post.reputation_for(:votes).to_i %>
-				</span>
+		<div id="posts">
+			<div class="avatar">
+				<p><%= image_tag avatar_url(@post.user), alt: 'avatar', class: 'avatarimage' %></p>	
+			 <p class="aname"><%= @post.author %></p>
+			</div>
+			<div class="pconsultinfo">
+				<p>	
+					<b>Date:</b> <%= @post.updated_at.localtime.to_s.sub(/\-\d\d\d\d/, '') %>
 				</p>
 				<p>
-			<!-- Check if user logged in equals user that created post to provide delete and edit buttons -->	
-				<% if current_user %> 
-					<% if current_user.username == @post.author %> 
-						<div class="edbuttons"><span class="sbutton"><%= link_to 'Edit Topic', edit_post_path(@post) %>
-						</span> 
-						<span class="sbutton"><%= link_to 'Delete Topic', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-						</span></div>
-					<% end %>
-				<% end %>
-					</p>
-			<% else %>
-				<p class="postr">
-<!-- Check if user logged in to provide thumbs up and down -->		
-				<% if current_user && !current_user.voted_for?(@post) %> 
-					<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), :method => :post, :remote => true %>
-					</span> 
-					<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), :method => :post, :remote => true %>
-					</span>
-				<% end %>
-				<br/>
-				<span>Reputation = <%= @post.reputation_for(:votes).to_i %>
-				</span>
+					<b>Patron request:</b> <%= @post.patron_request %>
 				</p>
-			<p>
-		<!-- Check if user logged in equals user that created post to provide delete and edit buttons -->	
-			<% if current_user %> 
-				<% if current_user.username == @post.author %> 
-					<div class="edbuttons"><span class="sbutton"><%= link_to 'Edit Topic', edit_post_path(@post) %>
-					</span> 
-					<span class="sbutton"><%= link_to 'Delete Topic', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-					</span></div>
-				<% end %>
+				<p>
+					<b>Consultation summary:</b> <%= @post.consultation_summary %>
+				</p>
+<!-- Check if web resources exist -->		
+			<% if !@post.resources_used.blank? %>
+				<p>
+				  <b>Web Resources used:</b>
+				  <%= get_links(@post.resources_used) %>
+				</p>
+			<% else %>	
+				<p>
+				  <b>Web Resources used:</b>
+				</p><br/><br/><br/>
 			<% end %>
-				</p>
 			</div>
-			<% end %><br /><br />
-		<div id="comments_thread">
+			<div class="allbuttons">
+				<!-- Check if user logged in equals user that created post to provide delete and edit buttons -->	
+					<% if current_user %> 
+						<% if current_user.username == @post.author %>
+							<% if current_user && !current_user.voted_for?(@post) %> 
+								<p class="thumbs">
+									<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), :method => :post, :remote => true %></span> 
+									<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), :method => :post, :remote => true %></span>	
+									<br/>
+									<span id="rep">Reputation = <%= @post.reputation_for(:votes).to_i %>
+									</span>
+								</p>
+							<% end %>
+							<p class="sbutton" id="edbuttons"><%= link_to 'Edit', edit_post_path(@post) %></p>
+							<p class="sbutton"id="edbuttons"><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></p>	
+						<% else %>			
+<!-- Check if user logged in to provide thumbs up and down -->		
+							<% if current_user && !current_user.voted_for?(@post) %>
+								<p class="thumbs"> 
+									<span class="up"><%= link_to image_tag("thumbs_up.png"), vote_post_path(@post, type: "up"), :method => :post, :remote => true %></span> 
+									<span class="down"><%= link_to image_tag("thumbs_down.png"), vote_post_path(@post, type: "down"), :method => :post, :remote => true %></span>	
+							   <br/>
+							   <span id="rep">Reputation = <%= @post.reputation_for(:votes).to_i %></span>
+								</p>
+							<% end %>
+						<% end %>
+					<% else %>
+						<br/>
+						<span id="rep" class="reputation">Reputation = <%= @post.reputation_for(:votes).to_i %></span>
+					<% end %>
+				</div>
+		</div>
+		<div id="comments_thread" style="clear: left;">
 				<%= render partial: 'comment', collection: @post.comments.find_with_reputation(:votes, :all, order: "votes desc") %>
 		</div>
-	</body>
-</html>

@@ -14,9 +14,6 @@ line-height: 1;
 color: black;
 background: white
 }
-ol,ul {
-list-style: none
-}
 table {
 border-collapse: separate;
 border-spacing: 0;
@@ -27,16 +24,6 @@ text-align: left;
 font-weight: normal;
 vertical-align: middle
 }
-q,blockquote {
-quotes: "" ""
-}
-q:before,q:after,blockquote:before,blockquote:after {
-content: ""
-}
-a img {
-border: none
-}
-
 .fancy-button-reset-base-class,input[type=submit] {
 font-family: "Lucida Grande",Lucida,Arial,sans-serif;
 background: url('/images/button_bg.png?1301401396') repeat-x bottom left;
@@ -55,13 +42,6 @@ padding: 0
 }
 .fancy-button-reset-base-class:focus,input[type=submit]:focus {
 outline: none
-}
-article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
-margin: 0;
-padding: 0;
-border: 0;
-outline: 0;
-display: block
 }
 .headings,h1 {
 font-family: "Yanone Kaffeesatz", sans
@@ -86,8 +66,8 @@ margin: 50px auto 30px;
 color: #2d4159;
 padding: 20px;
 width: 85%;
-min-width: 950px;
-max-width: 1250px;
+min-width: 1150px;
+max-width: 1350px;
 min-height: 280px;
 position: relative;
 line-height: 1.25em;
@@ -202,20 +182,17 @@ div.respondbs {
 	dislplay:block;
 	padding: 5px;
 	float:left;
+	margin-top:-10px;
 }
-div.posts{
-	padding: 5px;
-	margin-top:50px;
+div#posts{
+	display:block;
+	margin-top:30px;
 	font-size:14pt;
 }
 div#comments{
-	padding: 5px;
-	margin-top:5px;
+	padding-top: 10px;
 	margin-left: 30px;
 	font-size:14pt;
-}
-div.ccontents{
-	padding:5px;
 }
 .resource_links {
 	display:block;
@@ -396,91 +373,6 @@ font-weight: bold
 /* color: #d3dd8a; */
 color: black;
 }
-
-#sidebar + ul {
-padding-right: 180px
-}
-#sidebar + ul li {
-padding-right: 30px
-}
-#sidebar + ul:after {
-position: absolute;
-right: 180px;
-top: 0;
-bottom: 0;
-content: " ";
-width: 1px;
-background: #e5e5e5
-}
-#posts {
-margin: -15px -20px -20px;
-padding: 0 20px 0;
-min-width: 550px;
--moz-box-sizing: border-box;
--webkit-box-sizing: border-box;
--ms-box-sizing: border-box;
-box-sizing: border-box;
-position: relative;
--moz-border-radius-bottomleft: 6px;
--webkit-border-bottom-left-radius: 6px;
--o-border-bottom-left-radius: 6px;
--ms-border-bottom-left-radius: 6px;
--khtml-border-bottom-left-radius: 6px;
-border-bottom-left-radius: 6px;
--moz-border-radius-bottomright: 6px;
--webkit-border-bottom-right-radius: 6px;
--o-border-bottom-right-radius: 6px;
--ms-border-bottom-right-radius: 6px;
--khtml-border-bottom-right-radius: 6px;
-border-bottom-right-radius: 6px;
-border-right: 1px solid #e2e2e2
-}
-#posts li {
-border-bottom: 1px dashed #e5e5e5;
-padding: 1em 0 .8em;
-margin-right: 20px;
-font-size: 1.2em;
-position: relative
-}
-#posts li:last-child {
--moz-border-radius-bottomleft: 6px;
--webkit-border-bottom-left-radius: 6px;
--o-border-bottom-left-radius: 6px;
--ms-border-bottom-left-radius: 6px;
--khtml-border-bottom-left-radius: 6px;
-border-bottom-left-radius: 6px;
-border-bottom: 0
-}
-#posts li > a:first-child {
-font-weight: bold;
-display: block;
-color: #2d4159;
-padding-bottom: .1em
-}
-#posts .actions {
-border-left: 1px dotted #ddd;
-padding-left: 8px;
-margin-left: 3px;
-line-height: 1em;
-position: relative;
-top: 2px
-}
-#posts .actions a {
--ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-opacity: 0.2
-}
-#posts .actions a:hover {
--ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-opacity: 0.4
-}
-#posts .tag_list {
-display: inline-block;
-font-size: .8em;
-padding-top: .5em;
-color: #999
-}
 .post_actions {
 border-bottom: 1px dashed #ddd;
 margin-bottom: .7em;
@@ -513,29 +405,6 @@ padding: 4px 12px 3px 8px
 }
 .post_actions a[data-method='delete'] {
 right: 90px
-}
-p.tag_list {
-border-top: 1px dashed #ddd;
-margin: 1em 0;
-padding-top: .5em;
-font-size: .9em;
-color: #999
-}
-#sidebar {
-font-weight: bold;
-width: 150px;
-padding: 15px 10px;
-float: right;
-margin: -15px -20px 0 0;
-position: relative;
-z-index: 1
-}
-#sidebar ul {
-margin: .5em 0;
-font-weight: normal
-}
-#sidebar ul a {
-color: #6c7c9a
 }
 .input,form input[type=text],form input[type=password],form textarea {
 width: 100%;
@@ -798,58 +667,11 @@ input[type=checkbox] {
 	font-size:18pt;
 	color:#fff;
 }
-#comment_edit {
-	display:inline;
-	float:left;
-}​
-#show_hide{
-	display:inline;
-}
 
 #post_comment {
-	margin-top:50px;
+	margin-top:40px;
 }
-.postr {
-	display:inline;
-	float:right;
-	margin-top:-15px;
-	margin-right:15px;
-	font-size:11pt;
-}
- .commentr {
-	display:inline;
-	float:right;
-	margin-right:-5px;
-	font-size:11pt;
-}
- .repcomment {
-	display:inline;
-	float:right;
-	margin-top:-25px;
-	margin-right:15px;
-	font-size:11pt;
-}
-.precommend {
-	display:inline;
-	float:right;
-	margin-top:-20px;
-	margin-right:15px;
-	font-size:11pt;
-}
-.arecommend {
-	float:right;
-	margin-top:-35px;
-	margin-right:15px;
-	font-size:11pt;
-}
-.crecommend {
-	display:inline;
-	float:right;
-	margin-top:-70px;
-	margin-right:15px;
-	font-size:11pt;
-}
-img:hover {
+img:not(.avatarimage):hover {
 	opacity:.7;
 	cursor:pointer;
 }
@@ -860,26 +682,55 @@ font-weight: bold
 div.field_with_errors input {
 border: 3px solid red
 }
-.edbuttons{
-	font-size: 10px;
-	line-height: .5em;
+#edbuttons{
+	font-size: 12px;
+	line-height: 1.5em;
+	margin-left:50px;
+	margin-top:10px;
+	padding-bottom:30px;
+	padding-left:10px;
 }
 .thumbs {
-	display:inline;
-	float:right;
-	margin-right:20px;
-}
-.rep {
-	display:inline;
-	float:right;
-	margin-right:-90px;
+	margin-top:10px;
+	margin-left:60px;
 	font-size:11pt;
 }
-.lastpost {
-	font-size: 10pt;
-	margin-left: 10px;
-}
-tr.odd td, div.odd div {
+tr.odd td, tr.odd td{
 background: #FAFAFA;
 }
-
+.avatar{
+	float:left;
+	width:150px;
+	margin-top:20px;
+	margin-left:20px;
+	text-align:center;
+	margin-right:10px;
+}
+.consultinfo{
+	float:left;
+	width:800px;
+	padding:15px;
+}
+.pconsultinfo{
+	float:left;
+	width:830px;
+	padding:15px;
+}
+.allbuttons{
+	float:left;
+	margin-left:30px;
+	width:200px;
+}
+.aname{
+	margin-top:5px;
+	width:100px;
+	font-size:14pt;
+	font-weight:bold;
+	margin-left:20px;
+}
+.reputation{
+	margin-left:30px;
+}
+.thread_title{
+	font-size:28pt;
+}
