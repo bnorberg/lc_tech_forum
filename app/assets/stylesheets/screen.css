@@ -197,8 +197,8 @@ div#comments{
 .resource_links {
 	display:block;
 	margin-top:-30px;
-	margin-left:40px;
-	margin-bottom:10px;
+	margin-left:10px;
+	margin-bottom:20px;
 }
 a.post_title, .resource_links a, a.logout{
 	color:black;
@@ -702,19 +702,20 @@ background: #FAFAFA;
 	float:left;
 	width:150px;
 	margin-top:20px;
-	margin-left:20px;
+	margin-left:10px;
 	text-align:center;
-	margin-right:10px;
 }
 .consultinfo{
 	float:left;
-	width:700px;
-	padding:15px;
+	width:600px;
+	padding-top:15px;
+	padding-right:20px;
 }
 .pconsultinfo{
 	float:left;
-	width:730px;
-	padding:15px;
+	width:630px;
+	padding-top:15px;
+	padding-right:20px;
 }
 .allbuttons{
 	float:left;
