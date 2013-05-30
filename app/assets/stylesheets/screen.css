@@ -685,14 +685,14 @@ border: 3px solid red
 #edbuttons{
 	font-size: 12px;
 	line-height: 1.5em;
-	margin-left:50px;
+	margin-left:10px;
 	margin-top:10px;
 	padding-bottom:30px;
-	padding-left:10px;
+	padding-left:30px;
 }
 .thumbs {
 	margin-top:10px;
-	margin-left:60px;
+	margin-left:30px;
 	font-size:11pt;
 }
 tr.odd td, tr.odd td{
@@ -707,22 +707,19 @@ background: #FAFAFA;
 }
 .consultinfo{
 	float:left;
-	width:600px;
+	width:750px;
 	padding-top:15px;
-	padding-right:20px;
 }
 .pconsultinfo{
 	float:left;
-	width:630px;
+	width:780px;
 	padding-top:15px;
-	padding-right:20px;
 }
 .allbuttons{
 	float:left;
-	margin-left:30px;
-	width:200px;
+	width:150px;
 }
-.aname{
+.aname, .pdate{
 	margin-top:5px;
 	width:100px;
 	font-size:14pt;
@@ -730,7 +727,7 @@ background: #FAFAFA;
 	margin-left:20px;
 }
 .reputation{
-	margin-left:30px;
+	margin-left:15px;
 }
 .thread_title{
 	font-size:28pt;

@@ -21,11 +21,9 @@
 			<div class="avatar">
 				<p><%= image_tag avatar_url(@post.user), alt: 'avatar', class: 'avatarimage' %></p>	
 			 <p class="aname"><%= @post.author %></p>
+			<p class="pdate"><%= @post.updated_at.localtime.to_s.split(' ')[0] %></p>
 			</div>
 			<div class="pconsultinfo">
-				<p>	
-					<b>Date:</b> <%= @post.updated_at.localtime.to_s.sub(/\-\d\d\d\d/, '') %>
-				</p>
 				<p>
 					<b>Patron request:</b> <%= @post.patron_request %>
 				</p>

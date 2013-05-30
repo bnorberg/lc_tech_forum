@@ -5,12 +5,9 @@
 			<div class="avatar">
 				<p><%= image_tag avatar_url(comment.user), alt: 'avatar', class: 'avatarimage' %>
 			<p class="aname"><%= comment.author %></p>
+			<p class="pdate"><%= comment.updated_at.localtime.to_s.split(' ')[0] %></p>
 			</div>
 			<div class="consultinfo">
-		<p>
-		  <b>Date:</b>
-		  <%= comment.updated_at.localtime.to_s.sub(/\-\d\d\d\d/, '') %>
-		</p>
 
 		<p>
 		  <b>Patron request:</b>
