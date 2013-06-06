@@ -1,9 +1,14 @@
-<%= search_form_for @q do |f| %>	
 <div class="new_home">
 	<span class="directions"><%= link_to 'How to Use', '/directions.html', :target => '_blank' %>
 	</span>
  	<div id="title_cont">
-  		<%= f.text_field :title_cont %>  <%= f.submit %></div>	
+		<%= form_tag posts_path, :method => :get do %>
+		  <p>
+		    <%= text_field_tag :search, params[:search] %>
+		    <%= submit_tag "Search", :name => nil %>
+		  </p>
+		<% end %>
+</div>	
 		<div class="auth">
 			<br />
 <!-- Check if user logged to change head banner links and text -->
@@ -40,8 +45,17 @@
   				<tr class="<%= cycle("odd", "even") -%>">
     				<td><%= link_to post.title, post, class: 'post_title' %></td>
 						<%if !post.user_id.blank?%>
-						<td><%= image_tag avatar_url(post.user), alt: 'avatar', class: 'avatarimage' %>
+							<td><%= image_tag avatar_url(post.user), alt: 'avatar', class: 'avatarimage' %>
 							<%= post.author %></td>
+<!-- if use google profile image						
+							<% if post.user.image.present? %>
+								<td><%= image_tag post.user.image, height: 24, alt: 'avatar', class: 'avatarimage' %>
+								<%= post.author %></td>
+							<% else %>
+								<td><%= image_tag avatar_url(post.user), alt: 'avatar', class: 'avatarimage' %>
+								<%= post.author %></td>
+							<% end %>
+-->							
 						<% else %>
 							<td><%= post.author %></td>
 						<% end %>
@@ -61,4 +75,3 @@
 		</table>
 		<br />
 	<% end %>
-<% end %>

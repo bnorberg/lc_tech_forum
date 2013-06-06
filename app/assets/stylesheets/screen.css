@@ -142,16 +142,20 @@ z-index: -1;
 box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px 1px
 }
 p.paginate {
-	padding:3px;
+	padding:5px;
 }
+.pagination{
+	font-size: 18pt;
+	margin-bottom: 10px;
+}	
 div#title_cont {
 	font-size:14px;
 }
-input#q_title_cont {
+input#search {
 	width:75%;
 	font-size:14px;
 }
-input#q_title_cont, input {
+input#search, input {
 	display:inline;
 	float:left;
 }
@@ -288,6 +292,7 @@ background-image: linear-gradient(#42678d,#223447);*/
 box-shadow: rgba(255, 255, 255, 0.15) 0 1px inset, white 0 1px;
 margin: -20px -20px 15px;
 padding: 20px;
+padding-bottom:40px;
 padding-right: 50px;
 line-height: 1em;
 font-weight: normal;

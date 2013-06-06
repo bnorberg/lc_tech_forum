@@ -3,30 +3,37 @@
 		<tr class="<%= cycle("odd", "even") -%>">
 			<td>
 			<div class="avatar">
-				<p><%= image_tag avatar_url(comment.user), alt: 'avatar', class: 'avatarimage' %>
+<!-- if use google profile image	
+				<% if comment.user.image.present? %>
+					<p><%= image_tag comment.user.image, height: 84, alt: 'avatar', class: 'avatarimage' %></p>
+				<% else %>
+					<p><%= image_tag avatar_url(comment.user), alt: 'avatar', class: 'avatarimage' %></p>
+				<% end %>
+-->			
+			<p><%= image_tag avatar_url(comment.user), alt: 'avatar', class: 'avatarimage' %></p>
 			<p class="aname"><%= comment.author %></p>
 			<p class="pdate"><%= comment.updated_at.localtime.to_s.split(' ')[0] %></p>
 			</div>
 			<div class="consultinfo">
 
 		<p>
-		  <b>Patron request:</b>
+		  <b>Patron need:</b>
 		  <%= comment.patron_request %>
 		</p>
 
 		<p>
-		  <b>Consultation summary:</b>
+		  <b>Summary of actions:</b>
 		  <%= comment.consultation_summary %>
 		</p>
 <!-- Check if web resources exist -->		
 		<% if !comment.resources_used.blank? %>
 			<p>
-			  <b>Web Resources used:</b>
+			  <b>Web Resources:</b>
 			  <%= get_links(comment.resources_used) %>
 			</p>
 		<% else %>	
 			<p>
-			  <b>Web Resources used:</b>
+			  <b>Web Resources:</b>
 			</p><br/><br/><br/>
 		<% end %>	
 		</div>

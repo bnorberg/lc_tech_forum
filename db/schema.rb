@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416152003) do
+ActiveRecord::Schema.define(:version => 20130603202832) do
 
   create_table "authors", :force => true do |t|
     t.string   "username"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20130416152003) do
     t.string   "uid"
     t.string   "access_token"
     t.string   "secret"
+    t.string   "image"
   end
 
 end

@@ -7,8 +7,15 @@ class PostsController < ApplicationController
   # GET /posts.json
   
   def index
-    @q = Post.includes(:comments).search(params[:q])
-    @posts = @q.result(:distinct => true).paginate(:page =>params[:page], :per_page => 25).order('updated_at DESC')
+    @posts = Post.text_search(params[:search]).paginate(:page =>params[:page], :per_page => 15).order('updated_at DESC')
+###For solr indexing    
+    #@search = Post.search do
+    #  fulltext params[:search]
+     # order_by :score, :desc
+    #  order_by :updated_at, :desc
+     # paginate :page => params[:page] || 1, :per_page => 15
+   # end  
+   # @posts = @search.results
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

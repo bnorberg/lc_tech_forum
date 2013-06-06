@@ -23,11 +23,15 @@ end
 gem 'time_diff'
 gem 'jquery-rails'
 gem 'sorcery'
-gem 'ransack'
+#gem 'ransack'
 gem 'will_paginate', '~> 3.0.0'
 gem 'thin'
 gem 'omniauth-google-oauth2'
 gem 'activerecord-reputation-system', require: 'reputation_system'
+#gem 'sunspot_rails'
+#gem 'sunspot_solr'
+gem 'pg_search'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

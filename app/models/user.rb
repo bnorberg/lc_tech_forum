@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
        :aggregated_by => :sum
 
   
-  attr_accessible :username, :email, :password, :password_confirmation
+  attr_accessible :username, :email, :password, :password_confirmation, :image
   
   def self.from_omniauth(auth)
     find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
@@ -27,11 +27,21 @@ class User < ActiveRecord::Base
         user.uid = auth["uid"]
         user.username = auth["info"]["name"]
         user.email = auth["info"]["email"]
+        user.image = auth["info"]["image"]
         user.access_token = auth["credentials"]["token"]
         user.secret = auth["credentials"]["secret"]
         user.save
       end
   end
+  
+#Check if Google profile pic has changed and reassign image value  
+ # def self.update_profile_pic(auth)
+  #   user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
+   #    if user.image != auth["info"]["image"]
+    #     user.image = auth["info"]["image"]
+     #    user.save 
+     #  end    
+  # end
 
   def voted_for?(post)
     evaluations.where(target_type: post.class, target_id: post.id).present?

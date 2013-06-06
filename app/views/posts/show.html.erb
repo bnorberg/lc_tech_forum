@@ -19,8 +19,15 @@
 		<br />
 		<div id="posts">
 			<div class="avatar">
-				<p><%= image_tag avatar_url(@post.user), alt: 'avatar', class: 'avatarimage' %></p>	
-			 <p class="aname"><%= @post.author %></p>
+<!-- if use google profile image				
+					<% if @post.user.image.present? %>
+						<p><%= image_tag @post.user.image, height: 84, alt: 'avatar', class: 'avatarimage' %></p>
+					<% else %>
+						<p><%= image_tag avatar_url(@post.user), alt: 'avatar', class: 'avatarimage' %></p>
+					<% end %>
+-->			
+			<p><%= image_tag avatar_url(@post.user), alt: 'avatar', class: 'avatarimage' %></p>
+			<p class="aname"><%= @post.author %></p>
 			<p class="pdate"><%= @post.updated_at.localtime.to_s.split(' ')[0] %></p>
 			</div>
 			<div class="pconsultinfo">
