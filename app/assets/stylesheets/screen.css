@@ -332,15 +332,6 @@ div.auth a {
 	text-decoration: none;
 	diplay:inline;
 }
-span.directions {
-	float:right;
-	margin-top:-13px;
-}
-.directions a {
-	font-size:.5em;
-	text-decoration:none;
-	color:white;
-}
 h2,h3,h4 {
 color: #2d4159;
 font-size: 1.3em;
@@ -377,7 +368,7 @@ select {
 h1,h2,h3,h4,h5,h6 {
 font-weight: bold
 }
-.top-button:hover,a.new_post:hover,.article_actions a[href$='edit']:hover,.post_actions a[data-method='delete']:hover, div.auth a:hover, span.directions a:hover {
+.top-button:hover,a.new_post:hover,.article_actions a[href$='edit']:hover,.post_actions a[data-method='delete']:hover, div.auth a:hover {
 /* color: #d3dd8a; */
 color: black;
 }
