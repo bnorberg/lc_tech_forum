@@ -32,22 +32,9 @@
 			</div>
 			<div class="pconsultinfo">
 				<p>
-					<b>Patron request:</b> <%= @post.patron_request %>
-				</p>
-				<p>
-					<b>Consultation summary:</b> <%= @post.consultation_summary %>
+					<%= auto_link(@post.consultation_summary, :html=> { :target => '_blank' }) %>
 				</p>
 <!-- Check if web resources exist -->		
-			<% if !@post.resources_used.blank? %>
-				<p>
-				  <b>Web Resources used:</b>
-				  <%= get_links(@post.resources_used) %>
-				</p>
-			<% else %>	
-				<p>
-				  <b>Web Resources used:</b>
-				</p><br/><br/><br/>
-			<% end %>
 			</div>
 			<div class="allbuttons">
 				<!-- Check if user logged in equals user that created post to provide delete and edit buttons -->	

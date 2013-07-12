@@ -17,25 +17,8 @@
 			<div class="consultinfo">
 
 		<p>
-		  <b>Patron need:</b>
-		  <%= comment.patron_request %>
+			<%= auto_link(comment.consultation_summary, :html=> { :target => '_blank' }) %>
 		</p>
-
-		<p>
-		  <b>Summary of actions:</b>
-		  <%= comment.consultation_summary %>
-		</p>
-<!-- Check if web resources exist -->		
-		<% if !comment.resources_used.blank? %>
-			<p>
-			  <b>Web Resources:</b>
-			  <%= get_links(comment.resources_used) %>
-			</p>
-		<% else %>	
-			<p>
-			  <b>Web Resources:</b>
-			</p><br/><br/><br/>
-		<% end %>	
 		</div>
 		<div class="allbuttons">
 	<!-- Check if user logged in to provide thumbs up and down -->		

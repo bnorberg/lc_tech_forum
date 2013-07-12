@@ -31,6 +31,7 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 #gem 'sunspot_rails'
 #gem 'sunspot_solr'
 gem 'pg_search'
+gem 'rails_autolink'
 
 
 # To use ActiveModel has_secure_password
