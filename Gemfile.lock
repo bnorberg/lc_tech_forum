@@ -32,10 +32,6 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
-    carrierwave (0.9.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -46,16 +42,13 @@ GEM
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
-    faraday (0.8.7)
-      multipart-post (~> 1.1)
-    foreigner (1.4.2)
-      activerecord (>= 3.0.0)
+    execjs (2.0.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
-    i18n (0.6.4)
+    i18n (0.6.5)
     journey (1.0.4)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -66,11 +59,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-      carrierwave (>= 0.5.8)
-      foreigner (>= 0.9.1)
-      rails (> 3.0.0)
-    mime-types (1.23)
-    multi_json (1.7.7)
+    mime-types (1.24)
+    multi_json (1.7.9)
     multipart-post (1.2.0)
     oauth (0.4.7)
     oauth2 (0.8.1)
@@ -82,7 +72,7 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
-    omniauth-google-oauth2 (0.2.0)
+    omniauth-google-oauth2 (0.2.1)
       omniauth (~> 1.0)
       omniauth-oauth2
     omniauth-oauth2 (1.1.1)
@@ -121,7 +111,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    sass (3.2.9)
+    sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -144,7 +134,7 @@ GEM
     time_diff (0.3.0)
       activesupport
       i18n
-    treetop (1.4.14)
+    treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
@@ -160,7 +150,6 @@ DEPENDENCIES
   activerecord-reputation-system
   coffee-rails (~> 3.2.1)
   jquery-rails
-  mailboxer
   omniauth-google-oauth2
   pg
   pg_search
