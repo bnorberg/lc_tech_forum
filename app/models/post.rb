@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
       scoped  
     end
   end
-      
+  
 ###for solr indexing  
  # searchable do
 #    text :title, :default_boost => 2
