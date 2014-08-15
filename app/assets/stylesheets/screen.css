@@ -162,7 +162,6 @@ input#search, input {
 a.new_post {
 	display:block;
 	float:left;
-	margin-top: 10px;
 	text-decoration:none;
 	color:white;
 	font-size:24pt;
