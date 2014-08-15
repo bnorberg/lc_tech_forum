@@ -11,16 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725165021) do
-
-  create_table "authors", :force => true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "crypted_password"
-    t.string   "salt"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130603202832) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -92,7 +83,7 @@ ActiveRecord::Schema.define(:version => 20130725165021) do
   add_index "rs_reputations", ["target_id", "target_type"], :name => "index_rs_reputations_on_target_id_and_target_type"
 
   create_table "users", :force => true do |t|
-    t.string   "username",     :null => false
+    t.string   "username"
     t.string   "email"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
