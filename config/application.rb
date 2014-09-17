@@ -58,5 +58,9 @@ module LcTechForum
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Load the app's custom environment variables here, so that they are loaded before environments/*.rb
+app_environment_variables = File.join(Rails.root, 'config', 'local_env.rb')
+load(app_environment_variables) if File.exists?(app_environment_variables)
   end
 end
