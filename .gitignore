@@ -3,3 +3,4 @@
 /log
 *.DS*
 config/local_env.rb
+conf/database.yml
