@@ -4,3 +4,4 @@
 *.DS*
 config/local_env.rb
 config/database.yml
+config/secret_token.rb
